@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
+
 // CSS
 import './App.css';
 // Components
@@ -13,6 +14,7 @@ import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import About from './components/About';
+
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -36,7 +38,9 @@ function App() {
       setAuthToken(localStorage.jwtToken);
       setCurrentUser(token);
     }
-  }, []);
+  }, 
+  
+  []);
 
   const nowCurrentUser = (userData) => {
     console.log('nowCurentUser is here...');
