@@ -4,7 +4,7 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 function Comment (props){
    
    const  [comments, setComments] = useState([])
-   const  [author, setAuthor] = useState('')
+ 
 
 
     async function getComments  () {
@@ -12,8 +12,8 @@ function Comment (props){
          Axios.get(url).then( 
             async (res)=>{
                 if(res!== undefined){ 
-                     await setComments(res.data.user[0].userProfile[0].comments) 
-                     setAuthor(res.data.user[0].name)
+                     await setComments(res.data.user) 
+                    
                      
             }else{
                 const placaHolder = [{content : "leave comment"}]
@@ -34,16 +34,22 @@ function Comment (props){
         
     },[])
 
-    let commentList="leave a comment"
+    let authorList="leave a comment"
     if(comments.length !== 0){
-        console.log(comments[0].content)
-        commentList = comments.map((p, index)=>{
+        
+        authorList = comments.map((p, index)=>{
+            const commentMap = p.userProfile[0].comments
+            const commentList = commentMap.map((b, index)=>{
+                return <div>
+                   <h6>{b.content}</h6>
+               </div>
+            })
             
          
     
                 return <div  key={index}>
-                <h5>   {author} says        </h5>    
-                <h6>  {p.content}</h6>
+                <h5>   {p.name} says        </h5>    
+                <h6>  {commentList}</h6>
                </div>
     })}
     
@@ -51,7 +57,7 @@ function Comment (props){
     return(
 
         <div>
-          <h6>{commentList}</h6>
+          <h6>{authorList}</h6>
         </div>
     )
 }
