@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Tabs from './Tabs'
+
 
 const Profile = (props) => {
     console.log(props);
@@ -23,7 +23,7 @@ const Profile = (props) => {
     return (
         <div>
             { props.user ? userData : errorDiv() }
-            <Tabs />
+           
         </div>
     );
 
