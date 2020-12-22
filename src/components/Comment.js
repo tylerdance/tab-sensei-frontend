@@ -4,7 +4,7 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 function Comment (props){
    
    const  [comments, setComments] = useState([])
-
+   const  [author, setAuthor] = useState('')
 
 
     async function getComments  () {
@@ -12,11 +12,13 @@ function Comment (props){
          Axios.get(url).then( 
             async (res)=>{
                 if(res!== undefined){ 
-                     await setComments(res.data.user[0].userProfile[0].comments[0].content) 
-                      
+                     await setComments(res.data.user[0].userProfile[0].comments) 
+                     setAuthor(res.data.user[0].name)
+                     
             }else{
-                const placeHolder = 'be the first one to leave a comment';
-                setComments([{content:placeHolder}])
+                const placaHolder = [{content : "leave comment"}]
+                await setComments(placaHolder) 
+                console.log("33333" + placaHolder)
             }
         }).catch(err=>{console.log(err)})
             
@@ -24,16 +26,32 @@ function Comment (props){
 
     useEffect(()=>{  
        
+        
         getComments()  
-        console.log(comments) 
+        
+        
+        
         
     },[])
+
+    let commentList="leave a comment"
+    if(comments.length !== 0){
+        console.log(comments[0].content)
+        commentList = comments.map((p, index)=>{
+            
+         
     
-   
+                return <div  key={index}>
+                <h5>   {author} says        </h5>    
+                <h6>  {p.content}</h6>
+               </div>
+    })}
+    
   
     return(
+
         <div>
-          <h1>{comments}</h1>
+          <h6>{commentList}</h6>
         </div>
     )
 }
