@@ -14,6 +14,7 @@ import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import About from './components/About';
+import Tabs from './components/Tabs';
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -59,6 +60,7 @@ function App() {
   return (
     <div className="App">
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
+      <Tabs />
       <div className="container mt-5">
         <Switch>
           <Route path='/signup' component={ Signup } />
