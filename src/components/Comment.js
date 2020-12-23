@@ -1,17 +1,22 @@
 import Axios from 'axios'
 import { useState, useEffect } from 'react';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+let counter = 0;
 function Comment (props){
-   
+
+
    const  [comments, setComments] = useState([])
  
 
 
     async function getComments  () {
+
         let url =`${REACT_APP_SERVER_URL}/api/users/tabs/${props.songId}`
-         Axios.get(url).then( 
+        console.log(`${REACT_APP_SERVER_URL}/api/users/tabs/${props.songId}`)
+         await Axios.get(url).then( 
             async (res)=>{
                 if(res!== undefined){ 
+                    console.log(res.data)
                      await setComments(res.data.user) 
                     
                      
@@ -20,18 +25,11 @@ function Comment (props){
                 await setComments(placaHolder) 
                 console.log("33333" + placaHolder)
             }
-        }).catch(err=>{console.log(err)})
-            
+        }).catch(err=>{console.log(err)})     
     }
 
     useEffect(()=>{  
-       
-        
-        getComments()  
-        
-        
-        
-        
+        getComments()
     },[])
 
     let authorList="leave a comment"
@@ -40,13 +38,12 @@ function Comment (props){
         authorList = comments.map((p, index)=>{
             const commentMap = p.userProfile[0].comments
             const commentList = commentMap.map((b, index)=>{
-                return <div>
+                if(b.songsterr_id === props.songId){
+                        return <div>
                    <h6>{b.content}</h6>
                </div>
+                }
             })
-            
-         
-    
                 return <div  key={index}>
                 <h5>   {p.name} says        </h5>    
                 <h6>  {commentList}</h6>
