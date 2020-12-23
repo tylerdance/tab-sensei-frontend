@@ -1,14 +1,21 @@
-console.log('タイラ');
-console.log('レヴ');
-console.log('hi');
-console.log('hi');
-console.log('hi');
-console.log('hi');
-console.log('hi');
-console.log('hi');
-console.log('hi');
-console.log('hi');
-console.log('hi');
-console.log('hi');
-console.log('hi');
-console.log('hi');
+import React, { Component } from 'react';
+import Player from './Beats'
+
+class BeatBank extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  }
+    }
+    render() { 
+        return ( 
+            <div>
+                <div>
+                      <Player />
+                </div>
+            </div>
+         );
+    }
+}
+ 
+export default BeatBank;
+                
