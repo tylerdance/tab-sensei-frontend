@@ -13,7 +13,7 @@ function TabResults(props) {
             console.log("You are saving tab number "+e.target.value)
         }
 
-            return <div className="starShips" key={index}>
+            return <div className="starShips" key={p.id}>
             <a className="link" href={link} target="_blank" rel="noreferrer">{p.title}</a>
             <h2> Artist: {p.artist.name}</h2>
             <button className='btn-success' type="button" value={p.id} onClick={handleClick}>Save Tab!</button >

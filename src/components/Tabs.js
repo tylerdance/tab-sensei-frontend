@@ -25,8 +25,8 @@ class Tabs extends Component {
        
         
         this.setState({
-            starships: res.data
-           
+            starships: res.data,
+         
         })
     }
     
@@ -47,14 +47,17 @@ class Tabs extends Component {
     // }
     handleClick=async()=>{
         const res = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/${this.state.search}`)
-        console.log('successful');
-        console.log(res.data);
+        // console.log('successful');
+        // console.log(res.data);
        
         
         this.setState({
-            starships: res.data
-           
+            starships: res.data,
+         
+            
         })
+
+
     }
     render() {
         return(
@@ -72,7 +75,7 @@ class Tabs extends Component {
                     
 
                   {/* </form>  */}
-                  <TabResults tabs={this.state.starships}/>
+                  <TabResults tabs={this.state.starships} />
             
               </div>
           </div>
