@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Axios from 'axios'
-//import cloudinary from 'cloudinary'
-//import {multer, uploads} from 'multer'
+import axios from 'axios'
+import { Redirect } from 'react-router-dom';
+
 
 
 
@@ -15,6 +15,7 @@ class Image extends Component {
         this.state = { 
             imageUrl: null,
             imageAlt: null,
+            redirect: false,
          }
     }
 //     const [image, setImage] = useState('')
@@ -46,7 +47,7 @@ class Image extends Component {
         const formData = new FormData();
         formData.append('file', files[0]);
         // replace this with your upload preset name
-        formData.append('ml_default', 'qv5rfbwg');
+        formData.append('upload_preset', 'ml_default')
         const options = {
           method: 'POST',
           body: formData,
@@ -55,9 +56,25 @@ class Image extends Component {
         // replace cloudname with your Cloudinary cloud_name
         return fetch('https://api.Cloudinary.com/v1_1/dok4pz3i3/image/upload', options)
           .then(res => res.json())
-          .then(res => console.log(res))
-          .catch(err => console.log(err));
+          .then(res => {
+              const link = res.url;
+              console.log(link)
+              //.catch(err => console.log(err));
+
+
+            //   axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, link)
+            //   .then(response => {
+            //       console.log(response);
+            //       this.setState({redirect: true});
+            //   })
+            //   .catch(error => {
+            //       console.log(error);
+            //   })
+
+            })
+          
   }
+  
 
 
     render() { 

@@ -186,17 +186,20 @@ class RecTabs extends Component {
             },
             {
                 title: 'Comfortably Numb',
-                artist: 'Green Day',
+                artist: 'Pink Floyd',
                 url: 'https://www.songsterr.com/a/wsa/pink-floyd-comfortably-numb-tab-s271t2',
                 id: '271'
+            },
+            {
+                title: 'Watch It Fall',
+                artist: 'Billy Strings',
+                url: 'https://www.songsterr.com/a/wsa/billy-strings-watch-it-fall-tab-s476793t0',
+                id: '476793'
             },
            
         ]
 
         console.log(bestSongsInTheWorld.length)
-
-        let num = Math.floor(Math.random() * bestSongsInTheWorld.length)
-        let song = bestSongsInTheWorld[num].title
 
 
         function shuffle(array) {
