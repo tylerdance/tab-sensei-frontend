@@ -5,6 +5,7 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
 
+
 function TabResults(props) {
    
     const starShips = props.tabs.map((p, index)=>{
@@ -15,14 +16,17 @@ function TabResults(props) {
 
             return <div className="starShips" key={p.id}>
             <a className="link" href={link} target="_blank" rel="noreferrer">{p.title}</a>
-            <h2> Artist: {p.artist.name}</h2>
+            <h6 className = "tabNames"> Artist: {p.artist.name}</h6>
             <button className='btn-success' type="button" value={p.id} onClick={handleClick}>Save Tab!</button >
             <Comment songId={p.id} />
            </div>
     })
     return(
+        <div>
         <div id="manyStarships">
             {starShips}
+        </div>
+        
         </div>
     )
 }
