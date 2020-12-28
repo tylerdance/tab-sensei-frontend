@@ -8,10 +8,12 @@ function Comment (props){
  
 
    const  [comments, setComments] = useState([])
-   const [require, setRequire] = useState(false)
+   const [commentsStore, setCommentsStore] = useState('')
    
    
-   
+   function saveComment(){
+         console.log(commentsStore)
+   }
    
    
     async function getComments  () {
@@ -43,7 +45,14 @@ function Comment (props){
     
     },[])
 
-    let authorList="leave a comment"
+    let authorList=<div>
+      <br/>     
+                      <input id="inputSearchbar" type="text" onChange={(e=>{setCommentsStore(e.target.value)})}></input>
+                      <br/>  
+                       
+    <button onClick={saveComment}>Leave A Comment</button>
+    
+    </div>
     if(comments.length !== 0){
         
         authorList = comments.map((p, index)=>{

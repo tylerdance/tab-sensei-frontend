@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 
 function Videos (props){
     const starShips =  props.videos.map((p, index)=>{
+        console.log("git")
        const link =`https://www.youtube.com/watch?v=${p.id.videoId}`
         return <div id="videoPlayer">
 

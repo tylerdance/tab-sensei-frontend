@@ -3,10 +3,11 @@ import React, { Component } from 'react';
 import Axios from 'axios'; 
 import { Link } from 'react-router-dom';
 import Videos from './Videos'
+
 // import '../home.css';
 import TabResults from './TabResults';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
-const REACT_APP_YOU_TUBE_API_KEY = process.env.REACT_APP_YOU_TUBE_API_KEY;
+
 class Tabs extends Component {
     constructor() {
         super()
@@ -43,26 +44,11 @@ class Tabs extends Component {
         })
     }
     
-    
-    // componentDidUpdate(prevProps, prevState) {
-    // if (this.state.starships === '') {
-        
-    //     return;
-    // }
-    // if (prevState.starships === this.state.starshipName) {
-    //     return;
-    // }
-    // Axios.get(`${REACT_APP_SERVER_URL}/api/request/${this.state.search}`).then((res) => {
-    // }).catch(err => {
-    //     console.log(err);
-    // })
-   
-    // }
+ 
     handleClick=async()=>{
      
         const res = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/${this.state.search}`)
-        // console.log('successful');
-        // console.log(res.data);
+    
        
         
         this.setState({
@@ -85,7 +71,7 @@ class Tabs extends Component {
     render() {
         return(
             <div className="App">
-              <h2 id="header">ギタルのタブです</h2>
+              <h2 id="header">ギタ-のタブです</h2>
               <div>
                       <label>Search for Tabs</label> 
                       <br/>     
@@ -106,6 +92,8 @@ class Tabs extends Component {
 
                   {/* </form>  */}
                   <TabResults tabs={this.state.starships} />
+                  
+     
                  
             
               </div>
