@@ -10,7 +10,7 @@ function TabResults(props) {
     const starShips = props.tabs.map((p, index)=>{
         const link = `http://www.songsterr.com/a/wa/song?id=${p.id}`
         const handleClick=(e)=>{
-            console.log("You are saving tab number "+e.target.value)
+            console.log("You are saving tab number " + e.target.value)
         }
 
             return <div className="starShips" key={index}>
