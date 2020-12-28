@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Image from './Image'
+
 
 const Profile = (props) => {
     console.log(props);
@@ -23,6 +25,7 @@ const Profile = (props) => {
     return (
         <div>
             { props.user ? userData : errorDiv() }
+            <Image email={props.user.email}/>
            
         </div>
     );
