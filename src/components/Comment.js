@@ -56,7 +56,7 @@ function Comment (props){
     if(comments.length !== 0){
         
         authorList = comments.map((p, index)=>{
-            const commentMap = p.userProfile[0].comments
+            const commentMap = p.comments
             const commentList = commentMap.map((b, index)=>{
                 if(b.songsterr_id === props.songId){
                         return <div>
