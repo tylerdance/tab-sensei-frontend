@@ -70,8 +70,11 @@ class Tabs extends Component {
     }
     render() {
         return(
-            <div className="App">
-              <h2 id="header">ギタ-のタブです</h2>
+            <div className="bigApp">
+                <div id="youTube">
+             <Videos className="Videos" videos={this.state.starships2} />
+             </div>
+             <div id="tabSearch">
               <div>
                       <label>Search for Tabs</label> 
                       <br/>     
@@ -83,7 +86,7 @@ class Tabs extends Component {
 
               
 
-              <Videos className="Videos" videos={this.state.starships2} />
+             
               <div id="starships">
                   {/* {this.state.starships.map((starship, index) => */}
                   
@@ -96,6 +99,7 @@ class Tabs extends Component {
      
                  
             
+              </div>
               </div>
               </div>
           </div>
