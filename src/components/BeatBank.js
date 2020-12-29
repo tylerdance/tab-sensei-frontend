@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Player from './Beats'
 
+
 class BeatBank extends Component {
     constructor(props) {
         super(props);

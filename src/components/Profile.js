@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Tabs from './Tabs.js'
 import Image from './Image'
 
 
@@ -26,6 +26,7 @@ const Profile = (props) => {
         <div>
             { props.user ? userData : errorDiv() }
             <Image email={props.user.email}/>
+            <Tabs email={props.user.email} />
            
         </div>
     );

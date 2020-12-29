@@ -6,18 +6,27 @@ import Videos from './Videos'
 
 // import '../home.css';
 import TabResults from './TabResults';
+import { computeHeadingLevel } from '@testing-library/react';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 class Tabs extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             starships: [],
             starships2: [],
-            search:''
+            search:'',
+            email: props.email
         }
+        console.log("hi1 " + this.state.email)
+       
     }
+    
+
+
+
+    
     
  
     async componentDidMount() {
@@ -25,11 +34,12 @@ class Tabs extends Component {
         const res = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/${this.state.search}`)
         console.log('successful');
         console.log(res.data);
-       
+        console.log("Hello Guys" + this.state.email)
         
         this.setState({
-            starships: res.data,
-         
+            starships: res.data
+       
+            
         })
 
         const res2 = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/youtube/${this.state.search}`)
@@ -39,7 +49,7 @@ class Tabs extends Component {
        
         
         this.setState({
-            starships2: res2.data,
+            starships2: res2.data
          
         })
     }
@@ -53,7 +63,7 @@ class Tabs extends Component {
         
         this.setState({
             starships: res.data,
-         
+            email: this.props.email
             
         })
 
@@ -69,9 +79,13 @@ class Tabs extends Component {
 
     }
     render() {
+        console.log("hi for the last time " + this.state.email)
         return(
-            <div className="App">
-              <h2 id="header">ギタ-のタブです</h2>
+            <div className="bigApp">
+                <div id="youTube">
+             <Videos className="Videos" videos={this.state.starships2} />
+             </div>
+             <div id="tabSearch">
               <div>
                       <label>Search for Tabs</label> 
                       <br/>     
@@ -83,7 +97,7 @@ class Tabs extends Component {
 
               
 
-              <Videos className="Videos" videos={this.state.starships2} />
+             
               <div id="starships">
                   {/* {this.state.starships.map((starship, index) => */}
                   
@@ -91,11 +105,12 @@ class Tabs extends Component {
                       
 
                   {/* </form>  */}
-                  <TabResults tabs={this.state.starships} />
+                  <TabResults tabs={this.state.starships} email={this.state.email} />
                   
      
                  
             
+              </div>
               </div>
               </div>
           </div>

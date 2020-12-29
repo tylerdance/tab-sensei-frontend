@@ -14,16 +14,25 @@ class Home extends Component {
     render() { 
         return ( 
             <> 
-            <div className='home_elements'>
+            <div >
+            <h2 id="header">タブの先生</h2>
+            <h2 id="featured_tabs">Featured Tabs</h2>
+            <div id="heading">
+            <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609209287/anime_girl3_ilzqfv.png" id="anime_girl"/> 
             <div className='recTabs'>
+        
                     <RecTabs />
                 </div>
+                </div>
+            <div className='home_elements'>
+            
                 <div className='tabs'>
                     <Tabs />
                 </div>
                 <div className='beatBank'>
                     <BeatBank />
                 </div>
+            </div>
             </div>
             </>
          );

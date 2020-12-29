@@ -1,6 +1,7 @@
 .home_elements {
   display: flex;
-  justify-content: space-between;
+ 
+  position: relative;
 }
 
 .starShips {
@@ -16,40 +17,143 @@
   text-align:center;
   background-color: goldenrod;
   border-radius: 10px;
+  margin-left: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex: 20%;
 }
 
 .recTabs {
-  border: solid black 1px;
+  width: 100%;
+  /* border: solid black 1px; */
   text-align:center;
-  background-color: goldenrod;
+  /* background-color: goldenrod; */
   border-radius: 10px;
+  margin: auto;
+ 
+ 
+}
+
+#heading {
+  display: flex;
+ 
 }
 
 .tabs {
   text-align: center;
+  flex: 80%;
+ 
+  margin-top: 20px;
+  border-radius: 10px;
+ 
+}
+
+.bigApp{
+  display: flex;
+  position: relative;
+}
+
+#youTube {
+  flex:30%;
+  background-color: rgba(236, 163, 27, 0.5);
+  margin-right:80px;
+}
+
+#tabSearch {
+  flex: 70%;
+  background-color: rgba(236, 163, 27, 0.5);
 }
 
 #header {
-  background-color: darkblue;
-  color: yellow;
-  border: solid black 1px;
+  font-size: 40px;
+  /* background-color: darkblue; */
+  color:rgba(167, 164, 164, 0.808);
+  /* border: solid black 1px; */
   border-radius: 10px;
 }
 
+#rec_tabs_line{
+  position: relative;
+  display: flex;
+}
 .each_rec_song {
-  background-color:grey;
-  border: solid black 1px;
-  
+  width:150px;
+  height:180px;
+  text-decoration: none;
+  margin: auto;
+ 
 }
 
+
+
 .slider {
-  -webkit-appearance: none;  /* Override default CSS styles */
-  appearance: none;
+  /* -webkit-appearance: none;  Override default CSS styles */
+  /* appearance: none; */
   width: 100%; /* Full-width */
   height: 25px; /* Specified height */
   background: #d3d3d3; /* Grey background */
-  outline: none; /* Remove outline */
+  /* outline: none; Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
+  width: 90px;
 }
+
+p {
+  font-size: 15px;
+}
+
+#beatSpeed {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.tab_image {
+  margin-bottom: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.song_title {
+  color: blue;
+  margin-bottom: 0px;
+}
+
+.song_artist {
+  color: black;
+}
+
+#anime_girl{
+  width:200px;
+  height:200px;
+  object-fit: cover;
+}
+
+#featured_tabs {
+  text-align: center;
+}
+
+.speed {
+  display: flex;
+  position: relative;
+}
+
+.speed_bar {
+  flex:60%;
+  margin:auto;
+}
+
+.slider {
+  flex:40%;
+}
+
+.beat {
+  margin: 8px;
+  background-color: bisque;
+  border-radius: 10px;
+}
+

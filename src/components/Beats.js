@@ -26,18 +26,19 @@ function handleSlide4(e){
 }
   return (
     <div className='beatBox'>
-    <h1>Beat Bank</h1>
-    <div>            
-      <h4>Beat 1</h4>
+    <h6>Beat Bank</h6>
+    <div class="beat">            
       <form action="/action_page.php">
-      <label>Speed {pace1}</label>
-      <input type="range" class="slider" name="speed" id="range_speed" value={pace1} 
+      <div class="speed">
+      <label class="speed_bar" id="beatSpeed"> BEAT 1 || Speed: {pace1}</label>
+      <input type="range" className="slider" name="speed" id="range_speed" value={pace1} 
       min={0.5} max={2}   step={0.25} onChange={handleSlide1}/>
+        </div>
       </form>
     <ReactPlayer
         url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
-        width="400px"
-        height="50px"
+        width="250px"
+        height="15px"
         playing={false}
         controls={true}
         loop={true}
@@ -45,17 +46,18 @@ function handleSlide4(e){
       />
       </div>
 
-      <div>            
-      <h4>Beat 2</h4>
+      <div class="beat">            
       <form action="/action_page.php">
-      <label>Speed {pace2}</label>
-      <input type="range" class="slider" name="speed" id="range_speed" value={pace2} 
+      <div class="speed">
+      <label class="speed_bar" id="beatSpeed"> BEAT 2 || Speed: {pace2}</label>
+      <input type="range" className="slider" name="speed" id="range_speed" value={pace2} 
       min={0.5} max={2}   step={0.25} onChange={handleSlide2}/>
+        </div>
       </form>
     <ReactPlayer
         url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
-        width="400px"
-        height="50px"
+        width="250px"
+        height="15px"
         playing={false}
         controls={true}
         loop={true}
@@ -63,17 +65,19 @@ function handleSlide4(e){
       />
       </div>
 
-      <div>            
-      <h4>Beat 3</h4>
+      <div class="beat">            
+    
       <form action="/action_page.php">
-      <label>Speed {pace3}</label>
-      <input type="range" class="slider" name="speed" id="range_speed" value={pace3} 
+      <div class="speed">
+      <label class="speed_bar" id="beatSpeed"> BEAT 3 || Speed: {pace3}</label>
+      <input type="range" className="slider" name="speed" id="range_speed" value={pace3} 
       min={0.5} max={2}   step={0.25} onChange={handleSlide3}/>
+        </div>
       </form>
     <ReactPlayer
         url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
-        width="400px"
-        height="50px"
+        width="250px"
+        height="15px"
         playing={false}
         controls={true}
         loop={true}
@@ -81,17 +85,18 @@ function handleSlide4(e){
       />
       </div>
 
-      <div>            
-      <h4>Beat 4</h4>
+      <div class="beat">            
       <form action="/action_page.php">
-      <label>Speed {pace4}</label>
-      <input type="range" class="slider" name="speed" id="range_speed" value={pace4} 
+      <div class="speed">
+      <label class="speed_bar" id="beatSpeed"> BEAT 4 || Speed: {pace4}</label>
+      <input type="range" className="slider" name="speed" id="range_speed" value={pace4} 
       min={0.5} max={2}   step={0.25} onChange={handleSlide4}/>
+        </div>
       </form>
     <ReactPlayer
         url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
-        width="400px"
-        height="50px"
+        width="250px"
+        height="15px"
         playing={false}
         controls={true}
         loop={true}
