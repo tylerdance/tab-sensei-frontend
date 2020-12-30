@@ -157,3 +157,13 @@ p {
   border-radius: 10px;
 }
 
+.profilepic{
+  margin-bottom: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+

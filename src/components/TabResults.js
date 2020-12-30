@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import Comment from './Comment'
-import { useState} from 'react';
+import {useState} from 'react'
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -8,7 +8,7 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
 function TabResults(props) {
- 
+    const[email, setEmail]=useState(props.email) 
     const starShips = props.tabs.map((p, index)=>{
         const link = `http://www.songsterr.com/a/wa/song?id=${p.id}`
        
@@ -34,7 +34,7 @@ function TabResults(props) {
             <h6 className = "tabNames"> Artist: {p.artist.name}</h6>
             <button className='btn-success' type="button" value={p.id} onClick={handleClick}>Save Tab!</button >
           
-            <Comment songId={p.id} />
+            <Comment songId={p.id} email={email}/>
            </div>
     })
     return(

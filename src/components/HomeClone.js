@@ -4,7 +4,7 @@ import Tabs from './Tabs'
 import BeatBank from './BeatBank'
 import RecTabs from './RecTabs'
 
-class Home extends Component {
+class HomeClone extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -43,5 +43,4 @@ class Home extends Component {
     }
 }
  
-export default Home;
-                
+export default HomeClone;

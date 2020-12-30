@@ -27,11 +27,11 @@ function handleSlide4(e){
   return (
     <div className='beatBox'>
     <h6>Beat Bank</h6>
-    <div class="beat">            
+    <div className="beat">            
       <form action="/action_page.php">
-      <div class="speed">
-      <label class="speed_bar" id="beatSpeed"> BEAT 1 || Speed: {pace1}</label>
-      <input type="range" className="slider" name="speed" id="range_speed" value={pace1} 
+      <div className="speed">
+      <label className="speed_bar" id="beatSpeed"> BEAT 1 || Speed: {pace1}</label>
+      <input type="range" className="slider" name="speed"  value={pace1} 
       min={0.5} max={2}   step={0.25} onChange={handleSlide1}/>
         </div>
       </form>
@@ -46,11 +46,11 @@ function handleSlide4(e){
       />
       </div>
 
-      <div class="beat">            
+      <div className="beat">            
       <form action="/action_page.php">
-      <div class="speed">
-      <label class="speed_bar" id="beatSpeed"> BEAT 2 || Speed: {pace2}</label>
-      <input type="range" className="slider" name="speed" id="range_speed" value={pace2} 
+      <div className="speed">
+      <label className="speed_bar" id="beatSpeed"> BEAT 2 || Speed: {pace2}</label>
+      <input type="range" className="slider" name="speed"  value={pace2} 
       min={0.5} max={2}   step={0.25} onChange={handleSlide2}/>
         </div>
       </form>
@@ -65,12 +65,12 @@ function handleSlide4(e){
       />
       </div>
 
-      <div class="beat">            
+      <div className="beat">            
     
       <form action="/action_page.php">
-      <div class="speed">
-      <label class="speed_bar" id="beatSpeed"> BEAT 3 || Speed: {pace3}</label>
-      <input type="range" className="slider" name="speed" id="range_speed" value={pace3} 
+      <div className="speed">
+      <label className="speed_bar" id="beatSpeed"> BEAT 3 || Speed: {pace3}</label>
+      <input type="range" className="slider" name="speed"  value={pace3} 
       min={0.5} max={2}   step={0.25} onChange={handleSlide3}/>
         </div>
       </form>
@@ -85,11 +85,11 @@ function handleSlide4(e){
       />
       </div>
 
-      <div class="beat">            
+      <div className="beat">            
       <form action="/action_page.php">
-      <div class="speed">
-      <label class="speed_bar" id="beatSpeed"> BEAT 4 || Speed: {pace4}</label>
-      <input type="range" className="slider" name="speed" id="range_speed" value={pace4} 
+      <div className="speed">
+      <label className="speed_bar" id="beatSpeed"> BEAT 4 || Speed: {pace4}</label>
+      <input type="range" className="slider" name="speed"  value={pace4} 
       min={0.5} max={2}   step={0.25} onChange={handleSlide4}/>
         </div>
       </form>

@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react';
 import Axios from 'axios'; 
-import { Link } from 'react-router-dom';
 import Videos from './Videos'
+
+// import Home from './Home'
 
 // import '../home.css';
 import TabResults from './TabResults';
@@ -82,6 +83,7 @@ class Tabs extends Component {
         console.log("hi for the last time " + this.state.email)
         return(
             <div className="bigApp">
+             
                 <div id="youTube">
              <Videos className="Videos" videos={this.state.starships2} />
              </div>

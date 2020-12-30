@@ -1,6 +1,6 @@
 import Axios from 'axios'
 import { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
@@ -13,6 +13,17 @@ function Comment (props){
    
    function saveComment(){
          console.log(commentsStore)
+         console.log(props.songId)
+         console.log(props.email)
+         const userData = {
+             email: props.email,
+             tab_id:  props.songId,
+             content: commentsStore
+         }
+
+         Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
+         .then(res=>{console.log(res)})
+         .catch(err=>{console.log(err)})
    }
    
    

@@ -3,13 +3,28 @@ import { Link } from 'react-router-dom';
 import Tabs from './Tabs.js'
 import Image from './Image'
 import GetMytabs from './GetMytabs'
+import HomeClone from './HomeClone'
+import Axios from 'axios'
+import { useState } from 'react'
 
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Profile = (props) => {
+     const[photo, setPhoto]=useState([])
+  
+     Axios.get(`${REACT_APP_SERVER_URL}/api/users/myphoto/${props.user.email}`)
+     .then(res=>{
+         console.log(res.data)
+         setPhoto(res.data.user[0].image_url)
+        })
+     .catch(err=>{console.log(err)})
+
+    console.log("line 9")
     console.log(props);
     const userData = props.user ? 
     (<div>
         <h1>Profile</h1>
+        <img src={photo} className="profilepic"/>
         <p><strong>Name:</strong> {props.user.name}</p> 
         <p><strong>Email:</strong> {props.user.email}</p> 
         {/* <p><strong>ID:</strong> {props.user.id}</p>  */}
@@ -25,8 +40,10 @@ const Profile = (props) => {
     
     return (
         <div>
+
             { props.user ? userData : errorDiv() }
-            <Tabs email={props.user.email} />
+            {/* <Tabs email={props.user.email} /> */}
+            <HomeClone email={props.user.email}/>
             <Image email={props.user.email}/>
             <GetMytabs email={props.user.email}/>
             

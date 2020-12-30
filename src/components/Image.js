@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import { Redirect } from 'react-router-dom';
-
-
-
-
+import Axios from 'axios'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
+
+
+
 
 
 
@@ -58,7 +57,16 @@ class Image extends Component {
           .then(res => res.json())
           .then(res => {
               const link = res.url;
+              const userData ={
+                  email: this.props.email,
+                  image_url: link
+              }
+              console.log(this.props.email)
               console.log(link)
+              Axios.post(`${REACT_APP_SERVER_URL}/api/users/profile/setup/image`, userData)
+              .then( res=>{ console.log(res)})
+              .catch(err=>{console.log(err)})
+
               //.catch(err => console.log(err));
 
 
@@ -66,7 +74,7 @@ class Image extends Component {
             //   .then(response => {
             //       console.log(response);
             //       this.setState({redirect: true});
-            //   })
+            //   }
             //   .catch(error => {
             //       console.log(error);
             //   })
