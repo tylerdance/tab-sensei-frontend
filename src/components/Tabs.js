@@ -19,7 +19,7 @@ class Tabs extends Component {
             search:'',
             email: props.email
         }
-        console.log("hi1 " + this.state.email)
+        console.log("my tabs one  " + this.state.email)
        
     }
     

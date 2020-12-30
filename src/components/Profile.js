@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Tabs from './Tabs.js'
 import Image from './Image'
+import GetMytabs from './GetMytabs'
 
 
 const Profile = (props) => {
@@ -25,9 +26,12 @@ const Profile = (props) => {
     return (
         <div>
             { props.user ? userData : errorDiv() }
-            <Image email={props.user.email}/>
             <Tabs email={props.user.email} />
-           
+            <Image email={props.user.email}/>
+            <GetMytabs email={props.user.email}/>
+            
+            
+            
         </div>
     );
 
