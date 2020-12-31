@@ -10,6 +10,7 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
+    const [image, setImage] = useState('https://www.vippng.com/png/detail/44-447021_icon-guitar.png');
 
     const handleName = (e) => {
         setName(e.target.value);
@@ -17,6 +18,7 @@ const Signup = () => {
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
+        
     }
 
     const handlePassword = (e) => {
@@ -25,13 +27,14 @@ const Signup = () => {
 
     const handleConfirmPassword = (e) => {
         setConfirmPassword(e.target.value);
+
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (password === confirmPassword) {
-            const newUser = { name, email, password };
+            const newUser = { name, email, password, image };
             
             axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
@@ -64,6 +67,8 @@ const Signup = () => {
                             <label htmlFor="password">Password</label>
                             <input type="password" name="password" value={password} onChange={handlePassword} className="form-control" />
                         </div>
+                        
+                        
                         <div className="form-group">
                             <label htmlFor="confirmPassword">Confirm Password</label>
                             <input type="password" name="confirmPassword" value={confirmPassword} onChange={handleConfirmPassword} className="form-control" />

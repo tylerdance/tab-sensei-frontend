@@ -107,7 +107,7 @@ class Tabs extends Component {
                       
 
                   {/* </form>  */}
-                  <TabResults tabs={this.state.starships} email={this.state.email} />
+                  <TabResults tabs={this.state.starships} email={this.props.email} />
                   
      
                  

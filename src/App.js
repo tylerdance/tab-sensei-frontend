@@ -68,7 +68,7 @@ function App() {
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
           <Route path='/about' component={ About } />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser}/>
-          <Route exact path="/" component={ Home }/>
+          <Route exact path="/" component={ Home } />
         </Switch>
       </div>
       <Footer />

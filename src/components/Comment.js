@@ -56,14 +56,19 @@ function Comment (props){
     
     },[])
 
-    let authorList=<div>
-      <br/>     
-                      <input id="inputSearchbar" type="text" onChange={(e=>{setCommentsStore(e.target.value)})}></input>
-                      <br/>  
-                       
-    <button onClick={saveComment}>Leave A Comment</button>
+// function leaveComment () {
     
-    </div>
+//     document.querySelector('#comment').style.visibility="visible";
+// }
+    let commentBox = <div>
+        
+    <input id="inputSearchbar" type="text" placeholder="Leave a Comment" onChange={ (e=>{setCommentsStore(e.target.value)})}></input>
+ 
+     
+<button  id="comment" onClick={saveComment}>Comment</button>
+
+</div>
+    let authorList=commentBox;
     if(comments.length !== 0){
         
         authorList = comments.map((p, index)=>{
@@ -71,21 +76,22 @@ function Comment (props){
             const commentList = commentMap.map((b, index)=>{
                 if(b.songsterr_id === props.songId){
                         return <div>
-                   <h6>{b.content}</h6>
+                   <p>{b.content}</p>
                </div>
                 }
             })
-                return <div  key={index}>
-                <h5>   {p.name} says        </h5>    
-                <h6>  {commentList}</h6>
-               
+                return <div className="commentsParent" key={index}>
+                <div className="commentChild1"> <p>   {p.name}        </p>   </div> 
+               <div className="commentChild2"> <p>  {commentList}</p>
+                {commentBox}
+                </div>
                </div>
     })}
     
   
     return(
 
-        <div>
+        <div className="commentDisplay">
           <h6>{authorList}</h6>
          
         </div>

@@ -34,7 +34,7 @@ function TabResults(props) {
             <h6 className = "tabNames"> Artist: {p.artist.name}</h6>
             <button className='btn-success' type="button" value={p.id} onClick={handleClick}>Save Tab!</button >
           
-            <Comment songId={p.id} email={email}/>
+            <Comment songId={p.id} email={props.email}/>
            </div>
     })
     return(

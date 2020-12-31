@@ -5,9 +5,9 @@ function ShowMyTabs(props){
         const link = `http://www.songsterr.com/a/wa/song?id=${p.songsterr_id}`
 
         return <div className="starShips">
-            <a className="link" href={link} target="_blank" rel="noreferrer">{p.title}</a>
-            <h6 className = "tabNames"> Artist: {p.artist[0].name}</h6>
-            <Comment songId={p.songsterr_id}/>
+            <a className="link" href={link} target="_blank" rel="noreferrer"><span className="song_title">{p.title} -</span>
+            <span className = "tabNames"> {p.artist[0].name}</span></a>
+            <Comment songId={p.songsterr_id} email={props.email} />
         </div>
     })
     return(

@@ -26,7 +26,7 @@ async componentDidMount(){
         return(
             <div>
                
-                <ShowMyTabs mytabs={this.state.mytabs}/>
+                <ShowMyTabs mytabs={this.state.mytabs} email={this.props.email}/>
             </div>
         )
     }

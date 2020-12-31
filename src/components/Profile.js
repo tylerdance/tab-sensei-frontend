@@ -6,6 +6,7 @@ import GetMytabs from './GetMytabs'
 import HomeClone from './HomeClone'
 import Axios from 'axios'
 import { useState } from 'react'
+import BeatBank from './BeatBank.js';
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -23,10 +24,10 @@ const Profile = (props) => {
     console.log(props);
     const userData = props.user ? 
     (<div>
-        <h1>Profile</h1>
+        {/* <h1>Profile</h1> */}
         <img src={photo} className="profilepic"/>
-        <p><strong>Name:</strong> {props.user.name}</p> 
-        <p><strong>Email:</strong> {props.user.email}</p> 
+        <p>{props.user.name}</p> 
+        {/* <p><strong>Email:</strong> {props.user.email}</p>  */}
         {/* <p><strong>ID:</strong> {props.user.id}</p>  */}
     </div>) : <h4>Loading...</h4>
 
@@ -40,15 +41,28 @@ const Profile = (props) => {
     
     return (
         <div>
-
+            < div className="tabScroll">
+                <div className="tabScroll1">
             { props.user ? userData : errorDiv() }
+                  
+            <Image email={props.user.email}/>
+                </div>
+                <div className="tabScroll2">
+              
+            <GetMytabs email={props.user.email}/>
+                </div>
+                <div className="tabScroll3">
+                    <BeatBank />
+                </div>
+                </div>
             {/* <Tabs email={props.user.email} /> */}
             <HomeClone email={props.user.email}/>
-            <Image email={props.user.email}/>
-            <GetMytabs email={props.user.email}/>
+           
             
             
             
+            
+        
         </div>
     );
 
