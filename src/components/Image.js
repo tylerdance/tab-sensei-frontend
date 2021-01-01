@@ -55,7 +55,7 @@ class Image extends Component {
         // replace cloudname with your Cloudinary cloud_name
         return fetch('https://api.Cloudinary.com/v1_1/dok4pz3i3/image/upload', options)
           .then(res => res.json())
-          .then(res => {
+          .then(async(res) => {
               const link = res.url;
               const userData ={
                   email: this.props.email,
@@ -63,9 +63,10 @@ class Image extends Component {
               }
               console.log(this.props.email)
               console.log(link)
-              Axios.post(`${REACT_APP_SERVER_URL}/api/users/profile/setup/image`, userData)
+              await Axios.post(`${REACT_APP_SERVER_URL}/api/users/profile/setup/image`, userData)
               .then( res=>{ console.log(res)})
               .catch(err=>{console.log(err)})
+              window.location.reload();
 
               //.catch(err => console.log(err));
 

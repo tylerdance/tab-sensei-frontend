@@ -4,29 +4,21 @@ import Tabs from './Tabs.js'
 import Image from './Image'
 import GetMytabs from './GetMytabs'
 import HomeClone from './HomeClone'
-import Axios from 'axios'
-import { useState } from 'react'
+
 import BeatBank from './BeatBank.js';
 
-const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 
 const Profile = (props) => {
-     const[photo, setPhoto]=useState([])
-  
-     Axios.get(`${REACT_APP_SERVER_URL}/api/users/myphoto/${props.user.email}`)
-     .then(res=>{
-         console.log(res.data)
-         setPhoto(res.data.user[0].image_url)
-        })
-     .catch(err=>{console.log(err)})
+
 
     console.log("line 9")
     console.log(props);
     const userData = props.user ? 
     (<div>
         {/* <h1>Profile</h1> */}
-        <img src={photo} className="profilepic"/>
-        <p>{props.user.name}</p> 
+        {/* <img src={photo} className="profilepic"/>
+        <p>{props.user.name}</p>  */}
         {/* <p><strong>Email:</strong> {props.user.email}</p>  */}
         {/* <p><strong>ID:</strong> {props.user.id}</p>  */}
     </div>) : <h4>Loading...</h4>
@@ -41,11 +33,13 @@ const Profile = (props) => {
     
     return (
         <div>
+             <div className="tabScroll4">
+                {/* { props.user ? userData : errorDiv() } */}
+             
             < div className="tabScroll">
                 <div className="tabScroll1">
-            { props.user ? userData : errorDiv() }
-                  
-            <Image email={props.user.email}/>
+                <h2 id="header">タブの先生</h2>
+                <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609209287/anime_girl3_ilzqfv.png" id="anime_girl" alt="anime guitar girl"/> 
                 </div>
                 <div className="tabScroll2">
               
@@ -53,6 +47,9 @@ const Profile = (props) => {
                 </div>
                 <div className="tabScroll3">
                     <BeatBank />
+                </div>
+               
+                  {/* <Image email={props.user.email}/> */}
                 </div>
                 </div>
             {/* <Tabs email={props.user.email} /> */}

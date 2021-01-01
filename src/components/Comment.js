@@ -11,7 +11,7 @@ function Comment (props){
    const [commentsStore, setCommentsStore] = useState('')
    
    
-   function saveComment(){
+   async function saveComment(){
          console.log(commentsStore)
          console.log(props.songId)
          console.log(props.email)
@@ -21,9 +21,10 @@ function Comment (props){
              content: commentsStore
          }
 
-         Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
+         await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
          .then(res=>{console.log(res)})
          .catch(err=>{console.log(err)})
+         window.location.reload();
    }
    
    
@@ -57,9 +58,20 @@ function Comment (props){
     },[])
 
 // function leaveComment () {
-    
+ async function deleteComment(e){
+      e.preventDefault()
+      console.log(e.target.value)
+      const userData= {_id: e.target.value,
+                       email: props.email}
+      await Axios.put(`${REACT_APP_SERVER_URL}/api/users/profile/comments/delete`, userData)
+      .then( res=>{console.log(res)}).catch(err=>{console.log(err)})
+      window.location.reload();
+
+  }  
+
 //     document.querySelector('#comment').style.visibility="visible";
 // }
+
     let commentBox = <div>
         
     <input id="inputSearchbar" type="text" placeholder="Leave a Comment" onChange={ (e=>{setCommentsStore(e.target.value)})}></input>
@@ -77,6 +89,7 @@ function Comment (props){
                 if(b.songsterr_id === props.songId){
                         return <div>
                    <p>{b.content}</p>
+                   <button type="button" value={b._id} onClick={deleteComment}>Delete</button>
                </div>
                 }
             })

@@ -12,11 +12,12 @@ function TabResults(props) {
     const starShips = props.tabs.map((p, index)=>{
         const link = `http://www.songsterr.com/a/wa/song?id=${p.id}`
        
-        const handleClick=(e)=>{
+        const handleClick=async(e)=>{
             console.log("You are saving tab number " + e.target.value);
             console.log("your e-mail is " + props.email) 
             console.log("your artist is " + p.artist.name)
             console.log("your song title is " + p.title)
+         
             const userData = {
                    email: props.email,
                    title: p.title,
@@ -24,9 +25,10 @@ function TabResults(props) {
                    tab_id: e.target.value
             }
 
-            Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/addsong`, userData).then(res=>{
+            await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/addsong`, userData).then(res=>{
                 console.log(res)
             }).catch(err=>console.log(err));
+            window.location.reload();
         }
 
             return <div className="starShips" key={p.id}>

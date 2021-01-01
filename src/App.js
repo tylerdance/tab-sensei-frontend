@@ -14,7 +14,7 @@ import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import About from './components/About';
-
+import TabResults from './components/TabResults';
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
+      <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} user={currentUser}/>
       <div className="container mt-5">
         <Switch>
           <Route path='/signup' component={ Signup } />
@@ -68,7 +68,7 @@ function App() {
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
           <Route path='/about' component={ About } />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser}/>
-          <Route exact path="/" component={ Home } />
+       
         </Switch>
       </div>
       <Footer />

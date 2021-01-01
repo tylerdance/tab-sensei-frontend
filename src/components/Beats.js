@@ -26,7 +26,7 @@ function handleSlide4(e){
 }
   return (
     <div className='beatBox'>
-    <h6>Beat Bank</h6>
+    {/* <h6>Beat Bank</h6> */}
     <div className="beat">            
       <form action="/action_page.php">
       <div className="speed">
