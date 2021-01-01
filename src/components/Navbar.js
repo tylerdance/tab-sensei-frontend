@@ -1,7 +1,22 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import Axios from 'axios'
+import { useState } from 'react'
+import Image from'./Image'
 
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const Navbar = (props) => {
+
+    const[photo, setPhoto]=useState([])
+    if(props.isAuth){
+        Axios.get(`${REACT_APP_SERVER_URL}/api/users/myphoto/${props.user.email}`)
+        .then(res=>{
+            console.log(res.data)
+            setPhoto(res.data.user[0].image_url)
+           })
+        .catch(err=>{console.log(err)})
+    }
+  
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
@@ -20,14 +35,23 @@ const Navbar = (props) => {
                     </ul>
                     {
                         props.isAuth 
-                        ? <ul className="navbar-nav ml-auto">
+
+                        ?
+                        <div className="nav_display">
+                      
+                        <ul className="navbar-nav ml-auto">
+                            <li> <Image email={props.user.email}/></li>
+                            <li> <img src={photo} className="profilepic"/></li>
                             <li className="nav-item">
-                                <NavLink className="nav-link"  to="/profile">Profile</NavLink>
+                                <NavLink className="nav-link"  to="/profile">{props.user.name}</NavLink>
                             </li>
+                           
                             <li className="nav-item">
                                 <span onClick={props.handleLogout} className="nav-link logout-link">Logout</span>
                             </li>
+
                         </ul>
+                        </div>
                         : <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
                                 <NavLink className="nav-link"  to="/signup">Create Account</NavLink>

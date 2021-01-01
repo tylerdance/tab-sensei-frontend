@@ -1,8 +1,8 @@
-
 import React, { Component } from 'react';
 import Axios from 'axios'; 
-import { Link } from 'react-router-dom';
-import Videos from './Videos'
+import Videos from './Videos';
+import { Link, Route } from 'react-router-dom';
+// import Home from './Home'
 
 // import '../home.css';
 import TabResults from './TabResults';
@@ -19,7 +19,7 @@ class Tabs extends Component {
             search:'',
             email: props.email
         }
-        console.log("hi1 " + this.state.email)
+        console.log("my tabs one  " + this.state.email)
        
     }
     
@@ -76,15 +76,24 @@ class Tabs extends Component {
             starships2: res2.data.items,
          
         })
+        
 
     }
     render() {
         console.log("hi for the last time " + this.state.email)
         return(
+            
             <div className="bigApp">
+         
+             <div>
                 <div id="youTube">
-             <Videos className="Videos" videos={this.state.starships2} />
+                <Videos className="Videos" videos={this.state.starships2} />
              </div>
+
+                {/* <Route to="/results" render={()=>{
+             return <Videos tabs={this.state.starships} email={this.props.email} videos={this.state.starships2} /> 
+             }} />
+             </div> */}
              <div id="tabSearch">
               <div>
                       <label>Search for Tabs</label> 
@@ -92,6 +101,7 @@ class Tabs extends Component {
                       <input id="inputSearchbar" type="text" onChange={(e=>{this.setState({search: e.target.value})})}></input>
                       <br/>  
                       <button onClick={this.handleClick} >Search Tabs</button>
+                      {/* <button onClick={this.handleClick} ><Link to="/results"> Search Tabs </Link>  </button> */}
                       </div>
               <div id="results">
 
@@ -100,16 +110,18 @@ class Tabs extends Component {
              
               <div id="starships">
                   {/* {this.state.starships.map((starship, index) => */}
-                  
+                  <TabResults tabs={this.state.starships} email={this.state.email} />
                   {/* <form onSubmit={console.log('line 49 submit ' + this.state.search)}> */}
                       
 
                   {/* </form>  */}
-                  <TabResults tabs={this.state.starships} email={this.state.email} />
+                
+             
                   
      
                  
             
+              </div>
               </div>
               </div>
               </div>

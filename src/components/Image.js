@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import axios from 'axios'
-import { Redirect } from 'react-router-dom';
-
-
-
-
+import Axios from 'axios'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
+
+
+
 
 
 
@@ -56,9 +55,19 @@ class Image extends Component {
         // replace cloudname with your Cloudinary cloud_name
         return fetch('https://api.Cloudinary.com/v1_1/dok4pz3i3/image/upload', options)
           .then(res => res.json())
-          .then(res => {
+          .then(async(res) => {
               const link = res.url;
+              const userData ={
+                  email: this.props.email,
+                  image_url: link
+              }
+              console.log(this.props.email)
               console.log(link)
+              await Axios.post(`${REACT_APP_SERVER_URL}/api/users/profile/setup/image`, userData)
+              .then( res=>{ console.log(res)})
+              .catch(err=>{console.log(err)})
+              window.location.reload();
+
               //.catch(err => console.log(err));
 
 
@@ -66,7 +75,7 @@ class Image extends Component {
             //   .then(response => {
             //       console.log(response);
             //       this.setState({redirect: true});
-            //   })
+            //   }
             //   .catch(error => {
             //       console.log(error);
             //   })

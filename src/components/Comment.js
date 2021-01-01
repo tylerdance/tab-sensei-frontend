@@ -1,6 +1,6 @@
 import Axios from 'axios'
 import { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
@@ -11,8 +11,20 @@ function Comment (props){
    const [commentsStore, setCommentsStore] = useState('')
    
    
-   function saveComment(){
+   async function saveComment(){
          console.log(commentsStore)
+         console.log(props.songId)
+         console.log(props.email)
+         const userData = {
+             email: props.email,
+             tab_id:  props.songId,
+             content: commentsStore
+         }
+
+         await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
+         .then(res=>{console.log(res)})
+         .catch(err=>{console.log(err)})
+         window.location.reload();
    }
    
    
@@ -45,14 +57,30 @@ function Comment (props){
     
     },[])
 
-    let authorList=<div>
-      <br/>     
-                      <input id="inputSearchbar" type="text" onChange={(e=>{setCommentsStore(e.target.value)})}></input>
-                      <br/>  
-                       
-    <button onClick={saveComment}>Leave A Comment</button>
-    
-    </div>
+// function leaveComment () {
+ async function deleteComment(e){
+      e.preventDefault()
+      console.log(e.target.value)
+      const userData= {_id: e.target.value,
+                       email: props.email}
+      await Axios.put(`${REACT_APP_SERVER_URL}/api/users/profile/comments/delete`, userData)
+      .then( res=>{console.log(res)}).catch(err=>{console.log(err)})
+      window.location.reload();
+
+  }  
+
+//     document.querySelector('#comment').style.visibility="visible";
+// }
+
+    let commentBox = <div>
+        
+    <input id="inputSearchbar" type="text" placeholder="Leave a Comment" onChange={ (e=>{setCommentsStore(e.target.value)})}></input>
+ 
+     
+<button  id="comment" onClick={saveComment}>Comment</button>
+
+</div>
+    let authorList=commentBox;
     if(comments.length !== 0){
         
         authorList = comments.map((p, index)=>{
@@ -60,21 +88,23 @@ function Comment (props){
             const commentList = commentMap.map((b, index)=>{
                 if(b.songsterr_id === props.songId){
                         return <div>
-                   <h6>{b.content}</h6>
+                   <p>{b.content}</p>
+                   <button type="button" value={b._id} onClick={deleteComment}>Delete</button>
                </div>
                 }
             })
-                return <div  key={index}>
-                <h5>   {p.name} says        </h5>    
-                <h6>  {commentList}</h6>
-               
+                return <div className="commentsParent" key={index}>
+                <div className="commentChild1"> <p>   {p.name}        </p>   </div> 
+               <div className="commentChild2"> <p>  {commentList}</p>
+                {commentBox}
+                </div>
                </div>
     })}
     
   
     return(
 
-        <div>
+        <div className="commentDisplay">
           <h6>{authorList}</h6>
          
         </div>

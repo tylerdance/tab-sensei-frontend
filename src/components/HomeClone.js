@@ -24,11 +24,11 @@ class Home extends Component {
         return ( 
             <> 
             <div >
-            <h2 id="header">タブの先生</h2>
+           
         
             <h2 id="featured_tabs">Featured Tabs</h2>
             <div id="heading">
-            <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609209287/anime_girl3_ilzqfv.png" id="anime_girl" alt="anime guitar girl"/> 
+           
             <div className='recTabs'>
         
                     <RecTabs />
@@ -39,9 +39,7 @@ class Home extends Component {
                 <div className='tabs'>
                     <Tabs email={this.props.email}/>
                 </div>
-                <div className='beatBank'>
-                    <BeatBank />
-                </div>
+              
             </div>
             </div>
             </>
