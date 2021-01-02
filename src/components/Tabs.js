@@ -34,7 +34,7 @@ class Tabs extends Component {
         const res = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/${this.state.search}`)
         console.log('successful');
         console.log(res.data);
-        console.log("Hello Guys" + this.props.email)
+        console.log("Hello Guys" + this.state.email)
         
         this.setState({
             starships: res.data
@@ -80,7 +80,7 @@ class Tabs extends Component {
 
     // }
     render() {
-        console.log("hi for the last time " + this.props.email)
+        console.log("hi for the last time " + this.state.email)
         return(
             
             <div className="bigApp">
