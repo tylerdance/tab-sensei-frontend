@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import Comment from './Comment'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -13,6 +13,11 @@ function TabResults(props) {
         const link = `http://www.songsterr.com/a/wa/song?id=${p.id}`
        
         const handleClick=async(e)=>{
+            if(props.email===undefined){
+                console.log("Please Log In To Save Tabs")
+                alert('Please Log In to Save Tabs')
+            }
+
             console.log("You are saving tab number " + e.target.value);
             console.log("your e-mail is " + props.email) 
             console.log("your artist is " + p.artist.name)
@@ -27,14 +32,23 @@ function TabResults(props) {
 
             await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/addsong`, userData).then(res=>{
                 console.log(res)
+                props.toggle(true)
+                props.toggle(false)
             }).catch(err=>console.log(err));
-            window.location.reload();
+
+            // window.location.reload();
         }
 
+        // useEffect(()=>{
+
+        // },[])
+
             return <div className="starShips" key={p.id}>
-            <a className="link" href={link} target="_blank" rel="noreferrer">{p.title}</a>
-            <h6 className = "tabNames"> Artist: {p.artist.name}</h6>
-            <button className='btn-success' type="button" value={p.id} onClick={handleClick}>Save Tab!</button >
+            <a href={link} target="_blank" rel="noreferrer"> 
+             
+            <span className="link" >{p.title}</span>
+            <span className = "tabNames"> Artist: {p.artist.name}</span></a> 
+            <button className='saveButton' type="button" value={p.id} onClick={handleClick}>Save</button >
           
             <Comment songId={p.id} email={props.email}/>
            </div>
