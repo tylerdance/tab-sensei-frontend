@@ -1,14 +1,18 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, Redirect } from 'react-router-dom';
 import Axios from 'axios'
 import { useState } from 'react'
 import Image from'./Image'
 
+
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const Navbar = (props) => {
-
+    const[search, setSearch] = useState('')
     const[photo, setPhoto]=useState([])
     const[pic, setPic]=useState([false])
+    // const[tabs, setTabs]=useState([])
+    // const[videos, setVideos]=useState([])
+    const[email, setEmail]=useState(props.user.email)
     if(props.isAuth){
         Axios.get(`${REACT_APP_SERVER_URL}/api/users/myphoto/${props.user.email}`)
         .then(res=>{
@@ -17,7 +21,25 @@ const Navbar = (props) => {
            })
         .catch(err=>{console.log(err)})
     }
-  
+
+
+   async function handleClick (){
+     
+        const res = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/${search}`)
+     
+        await props.tabs(res.data)
+        setEmail(props.email)
+        console.log(res.data)
+        await props.search(search)
+        console.log(search)
+        const res2 = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/youtube/${search}`)
+        console.log('videos');
+        console.log(res2.data.items);
+        await props.videos(
+             res2.data.items
+        )
+       
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
@@ -41,7 +63,21 @@ const Navbar = (props) => {
                         <div className="nav_display">
                       
                         <ul className="navbar-nav ml-auto">
-                            <li> <Image email={props.user.email} pic={setPic}/></li>
+                            
+                            {/* <li> <Image email={props.user.email} pic={setPic}/></li> */}
+                            <li>
+                            <div>
+                            <label>Search for Tabs</label> 
+                            <br/>     
+                      <input id="inputSearchbar" type="text" onChange={(e=>{setSearch(e.target.value)})}></input>
+                      <br/>  
+                      {/* <button onClick={this.handleClick} >Search Tabs</button> */}
+                      <button onClick={handleClick} ><Link to="/results">Search Tabs</Link></button>
+                      {/* <button onClick={this.handleClick} ><Link to="/results"> Search Tabs </Link>  </button> */}
+                      </div>
+
+
+                            </li>
                             <li> <img src={photo} className="profilepic"/></li>
                             <li className="nav-item">
                                 <NavLink className="nav-link"  to="/profile">{props.user.name}</NavLink>

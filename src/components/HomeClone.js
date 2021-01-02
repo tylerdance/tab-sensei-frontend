@@ -37,7 +37,7 @@ class Home extends Component {
             <div className='home_elements'>
             
                 <div className='tabs'>
-                    <Tabs email={this.props.email} toggle={this.props.toggle}/>
+                    <Tabs email={this.props.email} toggle={this.props.toggle} tabs={this.props.tabs} videos={this.props.videos}/>
                 </div>
               
             </div>

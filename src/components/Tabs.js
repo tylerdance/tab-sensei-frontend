@@ -34,7 +34,7 @@ class Tabs extends Component {
         const res = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/${this.state.search}`)
         console.log('successful');
         console.log(res.data);
-        console.log("Hello Guys" + this.state.email)
+        console.log("Hello Guys" + this.props.email)
         
         this.setState({
             starships: res.data
@@ -55,39 +55,39 @@ class Tabs extends Component {
     }
     
  
-    handleClick=async()=>{
+    // handleClick=async()=>{
      
-        const res = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/${this.state.search}`)
+    //     const res = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/${this.state.search}`)
     
        
         
-        this.setState({
-            starships: res.data,
-            email: this.props.email
+    //     this.setState({
+    //         starships: res.data,
+    //         email: this.props.email
             
-        })
+    //     })
 
-        const res2 = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/youtube/${this.state.search}`)
-        console.log('videos');
-        console.log(res2.data.items);
+    //     const res2 = await Axios.get(`${REACT_APP_SERVER_URL}/api/request/youtube/${this.state.search}`)
+    //     console.log('videos');
+    //     console.log(res2.data.items);
       
         
-        this.setState({
-            starships2: res2.data.items,
+    //     this.setState({
+    //         starships2: res2.data.items,
          
-        })
+    //     })
         
 
-    }
+    // }
     render() {
-        console.log("hi for the last time " + this.state.email)
+        console.log("hi for the last time " + this.props.email)
         return(
             
             <div className="bigApp">
          
              <div>
                 <div id="youTube">
-                <Videos className="Videos" videos={this.state.starships2} />
+                <Videos className="Videos" videos={this.props.videos} />
              </div>
                 {/* <div>
                 <Route to="/results" render={()=>{
@@ -95,14 +95,7 @@ class Tabs extends Component {
              }} />
              </div> */}
              <div id="tabSearch">
-              <div>
-                      <label>Search for Tabs</label> 
-                      <br/>     
-                      <input id="inputSearchbar" type="text" onChange={(e=>{this.setState({search: e.target.value})})}></input>
-                      <br/>  
-                      <button onClick={this.handleClick} >Search Tabs</button>
-                      {/* <button onClick={this.handleClick} ><Link to="/results"> Search Tabs </Link>  </button> */}
-                      </div>
+             
               <div id="results">
 
               
@@ -110,7 +103,7 @@ class Tabs extends Component {
              
               <div id="starships">
                   {/* {this.state.starships.map((starship, index) => */}
-                  <TabResults tabs={this.state.starships} email={this.state.email} toggle={this.props.toggle} />
+                  <TabResults tabs={this.props.tabs} email={this.props.email} toggle={this.props.toggle} />
                   {/* <form onSubmit={console.log('line 49 submit ' + this.state.search)}> */}
                       
 

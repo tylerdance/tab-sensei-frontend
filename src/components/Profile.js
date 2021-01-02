@@ -54,7 +54,7 @@ const Profile = (props) => {
                 </div>
                 </div>
             {/* <Tabs email={props.user.email} /> */}
-            <HomeClone email={props.user.email}  toggle={setNewTab}/>
+            <HomeClone email={props.user.email}  toggle={setNewTab} tabs={props.tabs} videos={props.videos}/>
            
             
             
