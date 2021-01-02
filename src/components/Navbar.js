@@ -8,6 +8,7 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 const Navbar = (props) => {
 
     const[photo, setPhoto]=useState([])
+    const[pic, setPic]=useState([false])
     if(props.isAuth){
         Axios.get(`${REACT_APP_SERVER_URL}/api/users/myphoto/${props.user.email}`)
         .then(res=>{
@@ -40,7 +41,7 @@ const Navbar = (props) => {
                         <div className="nav_display">
                       
                         <ul className="navbar-nav ml-auto">
-                            <li> <Image email={props.user.email}/></li>
+                            <li> <Image email={props.user.email} pic={setPic}/></li>
                             <li> <img src={photo} className="profilepic"/></li>
                             <li className="nav-item">
                                 <NavLink className="nav-link"  to="/profile">{props.user.name}</NavLink>

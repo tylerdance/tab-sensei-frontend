@@ -8,33 +8,63 @@ const[pace2, setPace2]=useState(1)
 const[pace3, setPace3]=useState(1)
 const[pace4, setPace4]=useState(1)
 
-function handleSlide1(e){
-  setPace1(e.target.value);
-  console.log("speed is " + pace1)
+
+
+function changePace1plus(e){
+  e.preventDefault()
+  setPace1(pace1 + 0.055999999999999999999999999999999999999999999)
 }
-function handleSlide2(e){
-  setPace2(e.target.value);
-  console.log("speed is " + pace2)
+
+function changePace1minus(e){
+  e.preventDefault()
+  setPace1(pace1 - 0.055999999999999999999999999999999999999999999)
 }
-function handleSlide3(e){
-  setPace3(e.target.value);
-  console.log("speed is " + pace3)
+
+function changePace2plus(e){
+  e.preventDefault()
+  setPace2(pace2 + 0.055999999999999999999999999999999999999999999)
 }
-function handleSlide4(e){
-  setPace4(e.target.value);
-  console.log("speed is " + pace4)
+
+function changePace2minus(e){
+  e.preventDefault()
+  setPace2(pace2 - 0.055999999999999999999999999999999999999999999)
+}
+
+function changePace3plus(e){
+  e.preventDefault()
+  setPace3(pace3 + 0.055999999999999999999999999999999999999999999)
+}
+
+function changePace3minus(e){
+  e.preventDefault()
+  setPace3(pace3 - 0.055999999999999999999999999999999999999999999)
+}
+
+function changePace4plus(e){
+  e.preventDefault()
+  setPace4(pace4 + 0.055999999999999999999999999999999999999999999)
+}
+
+function changePace4minus(e){
+  e.preventDefault()
+  setPace4(pace4 - 0.055999999999999999999999999999999999999999999)
 }
   return (
+    ///////////////
     <div className='beatBox'>
     {/* <h6>Beat Bank</h6> */}
     <div className="beat">            
-      <form action="/action_page.php">
+      <div className="speedDaddy">
       <div className="speed">
-      <label className="speed_bar" id="beatSpeed"> BEAT 1 || Speed: {pace1}</label>
-      <input type="range" className="slider" name="speed"  value={pace1} 
-      min={0.5} max={2}   step={0.25} onChange={handleSlide1}/>
+    
+      <span> BEAT 1 </span>
+      <button onClick={changePace1minus}>-</button>
+      <p id="bpm">{Math.round(pace1*90)} BPM</p>
+      <button onClick={changePace1plus}>+</button>
+  
         </div>
-      </form>
+        </div>
+    
     <ReactPlayer
         url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
         width="250px"
@@ -45,15 +75,19 @@ function handleSlide4(e){
         playbackRate={pace1} 
       />
       </div>
-
+         
       <div className="beat">            
-      <form action="/action_page.php">
+      <div className="speedDaddy">
       <div className="speed">
-      <label className="speed_bar" id="beatSpeed"> BEAT 2 || Speed: {pace2}</label>
-      <input type="range" className="slider" name="speed"  value={pace2} 
-      min={0.5} max={2}   step={0.25} onChange={handleSlide2}/>
+    
+      <span> BEAT 2 </span>
+      <button onClick={changePace2minus}>-</button>
+      <p id="bpm">{Math.round(pace2*90)} BPM</p>
+      <button onClick={changePace2plus}>+</button>
+  
         </div>
-      </form>
+        </div>
+    
     <ReactPlayer
         url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
         width="250px"
@@ -66,14 +100,17 @@ function handleSlide4(e){
       </div>
 
       <div className="beat">            
-    
-      <form action="/action_page.php">
+      <div className="speedDaddy">
       <div className="speed">
-      <label className="speed_bar" id="beatSpeed"> BEAT 3 || Speed: {pace3}</label>
-      <input type="range" className="slider" name="speed"  value={pace3} 
-      min={0.5} max={2}   step={0.25} onChange={handleSlide3}/>
+    
+      <span> BEAT 3 </span>
+      <button onClick={changePace3minus}>-</button>
+      <p id="bpm">{Math.round(pace3*90)} BPM</p>
+      <button onClick={changePace3plus}>+</button>
+  
         </div>
-      </form>
+        </div>
+    
     <ReactPlayer
         url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
         width="250px"
@@ -86,13 +123,17 @@ function handleSlide4(e){
       </div>
 
       <div className="beat">            
-      <form action="/action_page.php">
+      <div className="speedDaddy">
       <div className="speed">
-      <label className="speed_bar" id="beatSpeed"> BEAT 4 || Speed: {pace4}</label>
-      <input type="range" className="slider" name="speed"  value={pace4} 
-      min={0.5} max={2}   step={0.25} onChange={handleSlide4}/>
+    
+      <span> BEAT 4 </span>
+      <button onClick={changePace4minus}>-</button>
+      <p id="bpm">{Math.round(pace4*90)} BPM</p>
+      <button onClick={changePace4plus}>+</button>
+  
         </div>
-      </form>
+        </div>
+    
     <ReactPlayer
         url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
         width="250px"

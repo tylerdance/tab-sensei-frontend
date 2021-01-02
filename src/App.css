@@ -139,8 +139,9 @@ p {
 }
 
 .speed {
-  display: flex;
-  position: relative;
+ /* background-color: blueviolet; */
+ margin: auto;
+
 }
 
 .speed_bar {
@@ -156,6 +157,7 @@ p {
   margin: 8px;
   background-color: rgba(218, 218, 218, 0.808);
   border-radius: 10px;
+  position: relative;
 }
 
 .profilepic{
@@ -226,4 +228,34 @@ p {
   display:inline;
   position:relative;
 }
+
+#bpm {
+  background-color: rgba(255, 145, 0, 0.473);
+  width:80px;
+  display: inline-block;
+
+}
+
+.speedDaddy{
+  text-align: center;
+  position: relative;
+  
+}
+
+.trashButton {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: tomato;
+  background-image: url("https://cdn2.vectorstock.com/i/1000x1000/01/71/trash-can-icon-vector-13490171.jpg") ;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  /* object-fit: cover; */
+  border-radius: 50%;
+ 
+}
+
+/* #trash{
+  background-color: transparent;
+} */
 

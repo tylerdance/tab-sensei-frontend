@@ -18,13 +18,14 @@ function Comment (props){
          const userData = {
              email: props.email,
              tab_id:  props.songId,
-             content: commentsStore
+             content: commentsStore,
+             save: false
          }
 
          await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
-         .then(res=>{console.log(res)})
+         .then(res=>{console.log(res); getComments()})
          .catch(err=>{console.log(err)})
-         window.location.reload();
+        //  window.location.reload();
    }
    
    
@@ -64,8 +65,11 @@ function Comment (props){
       const userData= {_id: e.target.value,
                        email: props.email}
       await Axios.put(`${REACT_APP_SERVER_URL}/api/users/profile/comments/delete`, userData)
-      .then( res=>{console.log(res)}).catch(err=>{console.log(err)})
-      window.location.reload();
+      .then( res=>{
+          console.log(res); 
+          getComments()})
+          .catch(err=>{console.log(err)})
+   
 
   }  
 
@@ -88,8 +92,8 @@ function Comment (props){
             const commentList = commentMap.map((b, index)=>{
                 if(b.songsterr_id === props.songId){
                         return <div>
-                   <p>{b.content}</p>
-                   <button type="button" value={b._id} onClick={deleteComment}>Delete</button>
+                   <span>{b.content}</span>
+                   <button type="button" className="trashButton" value={b._id} onClick={deleteComment}></button>
                </div>
                 }
             })

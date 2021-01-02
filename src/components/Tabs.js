@@ -89,8 +89,8 @@ class Tabs extends Component {
                 <div id="youTube">
                 <Videos className="Videos" videos={this.state.starships2} />
              </div>
-
-                {/* <Route to="/results" render={()=>{
+                {/* <div>
+                <Route to="/results" render={()=>{
              return <Videos tabs={this.state.starships} email={this.props.email} videos={this.state.starships2} /> 
              }} />
              </div> */}
@@ -110,7 +110,7 @@ class Tabs extends Component {
              
               <div id="starships">
                   {/* {this.state.starships.map((starship, index) => */}
-                  <TabResults tabs={this.state.starships} email={this.state.email} />
+                  <TabResults tabs={this.state.starships} email={this.state.email} toggle={this.props.toggle} />
                   {/* <form onSubmit={console.log('line 49 submit ' + this.state.search)}> */}
                       
 

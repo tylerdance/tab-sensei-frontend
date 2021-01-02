@@ -4,14 +4,15 @@ import Tabs from './Tabs.js'
 import Image from './Image'
 import GetMytabs from './GetMytabs'
 import HomeClone from './HomeClone'
-
+import {useState} from 'react'
 import BeatBank from './BeatBank.js';
 
 
 
 const Profile = (props) => {
 
-
+    const [newTab, setNewTab]= useState(false)
+    const [newComment, setNewComment]= useState(false)
     console.log("line 9")
     console.log(props);
     const userData = props.user ? 
@@ -43,7 +44,7 @@ const Profile = (props) => {
                 </div>
                 <div className="tabScroll2">
               
-            <GetMytabs email={props.user.email}/>
+            <GetMytabs email={props.user.email} newtab={newTab} toggle={setNewTab}/>
                 </div>
                 <div className="tabScroll3">
                     <BeatBank />
@@ -53,7 +54,7 @@ const Profile = (props) => {
                 </div>
                 </div>
             {/* <Tabs email={props.user.email} /> */}
-            <HomeClone email={props.user.email}/>
+            <HomeClone email={props.user.email}  toggle={setNewTab}/>
            
             
             

@@ -64,9 +64,13 @@ class Image extends Component {
               console.log(this.props.email)
               console.log(link)
               await Axios.post(`${REACT_APP_SERVER_URL}/api/users/profile/setup/image`, userData)
-              .then( res=>{ console.log(res)})
+              .then( res=>{ console.log(res);
+               this.props.pic(true)
+               this.props.pic(false)
+            
+            })
               .catch(err=>{console.log(err)})
-              window.location.reload();
+            //   window.location.reload();
 
               //.catch(err => console.log(err));
 

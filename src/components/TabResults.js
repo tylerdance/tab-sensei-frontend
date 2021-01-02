@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import Comment from './Comment'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -27,9 +27,16 @@ function TabResults(props) {
 
             await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/addsong`, userData).then(res=>{
                 console.log(res)
+                props.toggle(true)
+                props.toggle(false)
             }).catch(err=>console.log(err));
-            window.location.reload();
+
+            // window.location.reload();
         }
+
+        // useEffect(()=>{
+
+        // },[])
 
             return <div className="starShips" key={p.id}>
             <a className="link" href={link} target="_blank" rel="noreferrer">{p.title}</a>
