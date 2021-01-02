@@ -12,6 +12,7 @@ const Navbar = (props) => {
     const[pic, setPic]=useState([false])
     // const[tabs, setTabs]=useState([])
     // const[videos, setVideos]=useState([])
+    
     const[email, setEmail]=useState(props.user.email)
     if(props.isAuth){
         Axios.get(`${REACT_APP_SERVER_URL}/api/users/myphoto/${props.user.email}`)
@@ -49,12 +50,22 @@ const Navbar = (props) => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarsExample07">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" exact to="/">Home</NavLink>
-                        </li>
+                       
                         <li className="nav-item">
                             <NavLink className="nav-link"  to="/about">About</NavLink>
                         </li>
+                        <li>
+                            <div>
+                             
+                      <input id="inputSearchbar" type="text" onChange={(e=>{setSearch(e.target.value)})}></input>
+                    
+                      {/* <button onClick={this.handleClick} >Search Tabs</button> */}
+                      <button onClick={handleClick} placeholder="Search For Tabs"><Link to="/results">Search</Link></button>
+                      {/* <button onClick={this.handleClick} ><Link to="/results"> Search Tabs </Link>  </button> */}
+                      </div>
+
+
+                            </li>
                     </ul>
                     {
                         props.isAuth 
@@ -64,20 +75,8 @@ const Navbar = (props) => {
                       
                         <ul className="navbar-nav ml-auto">
                             
-                            {/* <li> <Image email={props.user.email} pic={setPic}/></li> */}
-                            <li>
-                            <div>
-                            <label>Search for Tabs</label> 
-                            <br/>     
-                      <input id="inputSearchbar" type="text" onChange={(e=>{setSearch(e.target.value)})}></input>
-                      <br/>  
-                      {/* <button onClick={this.handleClick} >Search Tabs</button> */}
-                      <button onClick={handleClick} ><Link to="/results">Search Tabs</Link></button>
-                      {/* <button onClick={this.handleClick} ><Link to="/results"> Search Tabs </Link>  </button> */}
-                      </div>
-
-
-                            </li>
+                            <li> <Image email={props.user.email} pic={setPic}/></li>
+                            
                             <li> <img src={photo} className="profilepic"/></li>
                             <li className="nav-item">
                                 <NavLink className="nav-link"  to="/profile">{props.user.name}</NavLink>
@@ -90,6 +89,9 @@ const Navbar = (props) => {
                         </ul>
                         </div>
                         : <ul className="navbar-nav ml-auto">
+                             <li className="nav-item">
+                            <NavLink className="nav-link" exact to="/">Home</NavLink>
+                        </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link"  to="/signup">Create Account</NavLink>
                             </li>

@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios'; 
 import Videos from './Videos';
-import { Link, Route } from 'react-router-dom';
-// import Home from './Home'
-
-// import '../home.css';
 import TabResults from './TabResults';
-import { computeHeadingLevel } from '@testing-library/react';
+import BeatBank from './BeatBank';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 class Tabs extends Component {
@@ -84,40 +80,18 @@ class Tabs extends Component {
         return(
             
             <div className="bigApp">
-         
-             <div>
                 <div id="youTube">
-                <Videos className="Videos" videos={this.props.videos} />
-             </div>
-                {/* <div>
-                <Route to="/results" render={()=>{
-             return <Videos tabs={this.state.starships} email={this.props.email} videos={this.state.starships2} /> 
-             }} />
-             </div> */}
-             <div id="tabSearch">
-             
-              <div id="results">
-
-              
-
-             
-              <div id="starships">
-                  {/* {this.state.starships.map((starship, index) => */}
-                  <TabResults tabs={this.props.tabs} email={this.props.email} toggle={this.props.toggle} />
-                  {/* <form onSubmit={console.log('line 49 submit ' + this.state.search)}> */}
-                      
-
-                  {/* </form>  */}
-                
-             
-                  
-     
-                 
-            
-              </div>
-              </div>
-              </div>
-              </div>
+                    <Videos className="Videos" videos={this.props.videos} />
+                 </div>
+          
+                <div id="tabSearch ">
+                    <div id="starships">
+                        <TabResults tabs={this.props.tabs} email={this.props.email} toggle={this.props.toggle} />
+                    </div>  
+                </div>
+                <div id="beatBank">
+                    <BeatBank />
+                </div>
           </div>
         )
     }

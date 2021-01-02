@@ -32,7 +32,7 @@ function ShowMyTabs(props){
         return <div className="starShips">
             <a className="link" href={link} target="_blank" rel="noreferrer"><span className="song_title">{p.title} -</span>
             <span className = "tabNames"> {p.artist[0].name}</span></a>
-            <button type="button" value={p._id} onClick={handleClick} className="trashButton"></button>
+            <button type="button" value={p._id} onClick={handleClick} className="trashButton">delete</button>
            
             {/* <button class="button">
     <div class="icon">

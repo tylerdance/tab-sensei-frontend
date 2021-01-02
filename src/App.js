@@ -57,6 +57,7 @@ function App() {
       localStorage.removeItem('jwtToken');
       setCurrentUser(null);
       setIsAuthenticated(false);
+
     }
   }
 
@@ -66,6 +67,7 @@ function App() {
       <div className="container mt-5">
         <Switch>
           <Route path='/signup' component={ Signup } />
+          <Route exact path='/' component={ Home} />
           <Route 
             path='/login' 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />

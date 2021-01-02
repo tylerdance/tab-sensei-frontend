@@ -12,6 +12,10 @@ function Comment (props){
    
    
    async function saveComment(){
+    if(props.email===undefined){
+        console.log("Please Log In To Save Tabs")
+        alert('Must Be Logged In to Comment')
+    }
          console.log(commentsStore)
          console.log(props.songId)
          console.log(props.email)
@@ -78,10 +82,10 @@ function Comment (props){
 
     let commentBox = <div>
         
-    <input id="inputSearchbar" type="text" placeholder="Leave a Comment" onChange={ (e=>{setCommentsStore(e.target.value)})}></input>
+   
  
      
-<button  id="comment" onClick={saveComment}>Comment</button>
+
 
 </div>
     let authorList=commentBox;
@@ -93,13 +97,13 @@ function Comment (props){
                 if(b.songsterr_id === props.songId){
                         return <div>
                    <span>{b.content}</span>
-                   <button type="button" className="trashButton" value={b._id} onClick={deleteComment}></button>
+                   <button type="button" className="trashButton" value={b._id} onClick={deleteComment}>delete</button>
                </div>
                 }
             })
                 return <div className="commentsParent" key={index}>
-                <div className="commentChild1"> <p>   {p.name}        </p>   </div> 
-               <div className="commentChild2"> <p>  {commentList}</p>
+                <div className="commentChild1"> <p >   {p.name}        </p>   </div> 
+               <div className="commentChild2"> <p className="commentFont">  {commentList}</p>
                 {commentBox}
                 </div>
                </div>
@@ -110,7 +114,8 @@ function Comment (props){
 
         <div className="commentDisplay">
           <h6>{authorList}</h6>
-         
+          <input id="inputComment" type="text" placeholder="Leave a Comment" onChange={ (e=>{setCommentsStore(e.target.value)})}></input>
+          <button  id="comment" onClick={saveComment}>Comment</button>
         </div>
       
     )
