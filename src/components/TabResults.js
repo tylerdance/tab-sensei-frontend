@@ -34,7 +34,10 @@ function TabResults(props) {
                 console.log(res)
                 props.toggle(true)
                 props.toggle(false)
-            }).catch(err=>console.log(err));
+                if(res){}
+            }).catch(err=>{console.log(err) 
+            alert('Your Tab Was Saved to Your Profile')}
+            );
 
             // window.location.reload();
         }
@@ -44,12 +47,15 @@ function TabResults(props) {
         // },[])
 
             return <div className="starShips" key={p.id}>
-            <a href={link} target="_blank" rel="noreferrer"> 
-             
+        <div className="tabLink">
+            <a href={link} target="_blank" rel="noreferrer" className=""> 
+            <div class="tabResultName">
             <span className="link" >{p.title}</span>
-            <span className = "tabNames"> Artist: {p.artist.name}</span></a> 
+            <span className = "tabNames"> Artist: {p.artist.name}</span> 
+            </div> 
+            </a>
             <button className='saveButton' type="button" value={p.id} onClick={handleClick}>Save</button >
-          
+        </div>
             <Comment songId={p.id} email={props.email}/>
            </div>
     })

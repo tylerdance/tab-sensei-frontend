@@ -75,7 +75,7 @@ function App() {
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} tabs={tabs} videos={videos}/>
           {/* <Route path="/results" component={ Tabs }   user={currentUser} tabs={tabs} videos={videos}/> */}
           <Route path="/results" render={()=>{
-             return <Tabs email={currentUser.email} tabs={tabs} videos={videos} /> 
+             return <Tabs email={currentUser ? currentUser.email: null} tabs={tabs} videos={videos} /> 
              }} />
        
         </Switch>

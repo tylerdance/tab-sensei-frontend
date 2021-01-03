@@ -8,6 +8,7 @@
   /* background-color: rgba(53, 68, 53, 0.185);
   border: solid black 1px; */
   /* border-radius: 10px; */
+  
   text-align: center;
   margin: 10px 0px 10px 0px;
   border-top: solid 2px rgba(169, 169, 169, 0.63);
@@ -167,18 +168,19 @@ p {
 }
 
 .tabScroll1 {
-  flex:15%;
+  flex:10%;
 }
 
 .tabScroll2 {
-  flex:65%;
+  flex:50%;
   height: 350px;
   overflow-y: scroll;
+  margin-left: 40px;
 }
 
 .tabScroll3{
   flex:10%;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 
@@ -265,6 +267,7 @@ p {
   font-size: 10px;
   margin-left: 5px;
   border-radius: 5px;
+  flex:20%;
 }
 
 #inputComment {
@@ -274,3 +277,16 @@ p {
 .commentFont {
   font-size: 10px;
 }
+
+.tabResultName {
+  width: 350px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 80%; 
+}
+
+.tabLink {
+  display: flex;
+}
+

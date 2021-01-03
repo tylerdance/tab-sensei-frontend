@@ -13,7 +13,7 @@ const Navbar = (props) => {
     // const[tabs, setTabs]=useState([])
     // const[videos, setVideos]=useState([])
     
-    const[email, setEmail]=useState(props.user.email)
+    const[email, setEmail]=useState(props.user ? props.user.email : null)
     if(props.isAuth){
         Axios.get(`${REACT_APP_SERVER_URL}/api/users/myphoto/${props.user.email}`)
         .then(res=>{

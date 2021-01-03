@@ -7,6 +7,8 @@ const[pace1, setPace1]=useState(1)
 const[pace2, setPace2]=useState(1)
 const[pace3, setPace3]=useState(1)
 const[pace4, setPace4]=useState(1)
+const[pace5, setPace5]=useState(1)
+const[pace6, setPace6]=useState(1)
 
 
 
@@ -17,6 +19,9 @@ function changePace1plus(e){
 
 function changePace1minus(e){
   e.preventDefault()
+  if(pace1<=0.5){
+    return
+  }
   setPace1(pace1 - 0.055999999999999999999999999999999999999999999)
 }
 
@@ -27,6 +32,9 @@ function changePace2plus(e){
 
 function changePace2minus(e){
   e.preventDefault()
+  if(pace2<=0.5){
+    return
+  }
   setPace2(pace2 - 0.055999999999999999999999999999999999999999999)
 }
 
@@ -37,10 +45,16 @@ function changePace3plus(e){
 
 function changePace3minus(e){
   e.preventDefault()
+  if(pace3<=0.5){
+    return
+  }
   setPace3(pace3 - 0.055999999999999999999999999999999999999999999)
 }
 
 function changePace4plus(e){
+  if(pace4<=0.5){
+    return
+  }
   e.preventDefault()
   setPace4(pace4 + 0.055999999999999999999999999999999999999999999)
 }
@@ -48,6 +62,32 @@ function changePace4plus(e){
 function changePace4minus(e){
   e.preventDefault()
   setPace4(pace4 - 0.055999999999999999999999999999999999999999999)
+}
+
+function changePace5plus(e){
+  if(pace5<=0.5){
+    return
+  }
+  e.preventDefault()
+  setPace5(pace5 + 0.055999999999999999999999999999999999999999999)
+}
+
+function changePace5minus(e){
+  e.preventDefault()
+  setPace5(pace5 - 0.055999999999999999999999999999999999999999999)
+}
+
+function changePace6plus(e){
+  if(pace6<=0.5){
+    return
+  }
+  e.preventDefault()
+  setPace6(pace6 + 0.055999999999999999999999999999999999999999999)
+}
+
+function changePace6minus(e){
+  e.preventDefault()
+  setPace6(pace6 - 0.055999999999999999999999999999999999999999999)
 }
   return (
     ///////////////
@@ -66,7 +106,7 @@ function changePace4minus(e){
         </div>
     
     <ReactPlayer
-        url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
+        url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643228/sensei-beat-1-_60_sec_eaev0o.mp3 "
         width="250px"
         height="15px"
         playing={false}
@@ -89,7 +129,7 @@ function changePace4minus(e){
         </div>
     
     <ReactPlayer
-        url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
+        url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643253/sensei-beat-2-_60_sec_gtceyc.mp3"
         width="250px"
         height="15px"
         playing={false}
@@ -112,7 +152,7 @@ function changePace4minus(e){
         </div>
     
     <ReactPlayer
-        url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
+        url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643276/sensei-beat-3-_60_sec_hdznq8.mp3"
         width="250px"
         height="15px"
         playing={false}
@@ -135,13 +175,59 @@ function changePace4minus(e){
         </div>
     
     <ReactPlayer
-        url="https://www.mboxdrive.com/52%20Drum%20Loop%20003%20copy.mp3"
+        url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643793/sensei-beat-4-_60_sec_zwvtnw.mp3"
         width="250px"
         height="15px"
         playing={false}
         controls={true}
         loop={true}
         playbackRate={pace4} 
+      />
+      </div>
+
+      <div className="beat">            
+      <div className="speedDaddy">
+      <div className="speed">
+    
+      <span> BEAT 5 </span>
+      <button onClick={changePace5minus}>-</button>
+      <p id="bpm">{Math.round(pace5*90)} BPM</p>
+      <button onClick={changePace5plus}>+</button>
+  
+        </div>
+        </div>
+    
+    <ReactPlayer
+        url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643812/sensei-beat-5-_60_sec_xzatrr.mp3"
+        width="250px"
+        height="15px"
+        playing={false}
+        controls={true}
+        loop={true}
+        playbackRate={pace5} 
+      />
+      </div>
+
+      <div className="beat">            
+      <div className="speedDaddy">
+      <div className="speed">
+    
+      <span> BEAT 6 </span>
+      <button onClick={changePace6minus}>-</button>
+      <p id="bpm">{Math.round(pace6*90)} BPM</p>
+      <button onClick={changePace6plus}>+</button>
+  
+        </div>
+        </div>
+    
+    <ReactPlayer
+        url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643834/sensei-beat-6-_60_sec_yx0hqu.wav"
+        width="250px"
+        height="15px"
+        playing={false}
+        controls={true}
+        loop={true}
+        playbackRate={pace6} 
       />
       </div>
     </div>
