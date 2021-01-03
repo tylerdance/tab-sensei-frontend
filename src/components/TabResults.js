@@ -29,15 +29,55 @@ function TabResults(props) {
                    artist: p.artist.name,
                    tab_id: e.target.value
             }
+            await Axios.get(`${REACT_APP_SERVER_URL}/api/users/songlist/${props.email}`)
+            .then(res=>{
+                if(res.data.response[0].song_list.length!==0){
+                    console.log('duplicate?')
+                    console.log(res.data.response[0].song_list)
+                    const tabs = res.data.response[0].song_list
+                    let counter=false;
+                    const unique= tabs.map((p, index)=>{
+                        console.log(p.songsterr_id)
+                        console.log(e.target.value)
+                        if(parseInt(p.songsterr_id)===parseInt(e.target.value)){
+                            counter=true;
+                        
+                            
+                        }else{
+                          
+                  
+                        }
+                     
+                            
+                       
+                    })
+                    if(counter===false){
+                        Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/addsong`, userData).then(res=>{
+                            console.log(res)
+                            props.toggle(true)
+                            props.toggle(false)
+                            if(res){}
+                        }).catch(err=>{console.log(err) 
+                        alert('Your Tab Was Saved to Your Profile')}
+                        );
+                    }else{
+                        alert("This Tab Has Already Been Saved")
+                    }
+                }else{
+                
+                    Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/addsong`, userData).then(res=>{
+                        console.log(res)
+                        props.toggle(true)
+                        props.toggle(false)
+                        if(res){}
+                    }).catch(err=>{console.log(err) 
+                    alert('Your Tab Was Saved to Your Profile')}
+                    );
+                }
+         
+            }).catch(err=>{console.log(err)})
 
-            await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/addsong`, userData).then(res=>{
-                console.log(res)
-                props.toggle(true)
-                props.toggle(false)
-                if(res){}
-            }).catch(err=>{console.log(err) 
-            alert('Your Tab Was Saved to Your Profile')}
-            );
+          
 
             // window.location.reload();
         }

@@ -28,9 +28,11 @@ function Comment (props){
              time: Date.now(), 
              email: props.email
          }
-
+         if(commentsStore===""){
+             return
+         }
          await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
-         .then(res=>{console.log(res); getComments()})
+         .then(res=>{console.log(res); getComments();})
          .catch(err=>{console.log(err)})
         //  window.location.reload();
    }
@@ -127,19 +129,31 @@ let commentOrder;
                 
               }
              commentOrder= sortByDate(commentArrayAll).map((a, index)=>{
-                 const iddd=`comment${index}`
-                 if(a.email!==props.email){
-                     console.log(iddd)
-                    //  document.querySelector(`#${iddd}`).style.display="none"
-                     
-                 }
+                const iddd=`comment${index}`
+                // function hideDelete(){
+                    
+                //     if(a.email!==props.email){
+                //         console.log(iddd)
+                //         document.querySelector(`#${iddd}`).style.display="none"
+                        
+                //     }
+                //  }
+                
                  return <div>
                    <div className="commentChild1"> <p >   {a.userName}        </p>   </div> 
                    <span>{a.content}</span>
-                   <button type="button" className="trashButton" value={a.id} key={index} id={iddd} onClick={deleteComment}>delete</button> 
+                   {
+                       a.email===props.email
+                       ?
+                       <button type="button" className="trashButton" value={a.id} key={index}  onClick={deleteComment}>delete</button>
+                       :
+                       <div>
+                           </div>
+                   }
+                   
                  </div>
              }) 
-            console.log(sortByDate(commentArrayAll))
+            // console.log(sortByDate(commentArrayAll))
            
 
                 return <div className="commentsParent" key={index}>
@@ -155,7 +169,7 @@ let commentOrder;
 
         <div className="commentDisplay">
           <h6>{commentOrder}</h6>
-          <input id="inputComment" type="text" placeholder="Leave a Comment" onChange={ (e=>{setCommentsStore(e.target.value)})}></input>
+          <input id="inputComment" type="text" placeholder="Leave a Comment" onChange={(e=>{setCommentsStore(e.target.value)})}></input>
           <button  id="comment" onClick={saveComment}>Comment</button>
         </div>
       
