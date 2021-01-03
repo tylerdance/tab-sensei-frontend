@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import { useState, useEffect } from 'react';
+import moment from 'moment';
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -9,7 +10,7 @@ function Comment (props){
 
    const  [comments, setComments] = useState([])
    const [commentsStore, setCommentsStore] = useState('')
-   
+
    
    async function saveComment(){
     if(props.email===undefined){
@@ -19,11 +20,13 @@ function Comment (props){
          console.log(commentsStore)
          console.log(props.songId)
          console.log(props.email)
+         console.log( moment(Date.now()).format())
          const userData = {
              email: props.email,
              tab_id:  props.songId,
              content: commentsStore,
-             save: false
+             time: Date.now(), 
+             email: props.email
          }
 
          await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
@@ -88,24 +91,62 @@ function Comment (props){
 
 
 </div>
+let commentOrder;
+    const commentArrayAll=[]
     let authorList=commentBox;
     if(comments.length !== 0){
         
         authorList = comments.map((p, index)=>{
+            
             const commentMap = p.comments
+
             const commentList = commentMap.map((b, index)=>{
                 if(b.songsterr_id === props.songId){
+                    commentArrayAll.push({
+                       userName: p.name,
+                       content: b.content,
+                       date: b.date,
+                       id: b._id, 
+                       email: b.email
+                    })
+                    
                         return <div>
-                   <span>{b.content}</span>
-                   <button type="button" className="trashButton" value={b._id} onClick={deleteComment}>delete</button>
+                   {/* <span>{b.content}</span>
+                   <button type="button" className="trashButton" value={b.id} onClick={deleteComment}>delete</button> */}
                </div>
                 }
             })
+
+            function sortByDate(arr) {
+                arr.sort(function(a,b){
+                   
+                  return a.date - b.date;
+                });
+                console.log(arr)
+                return arr;
+                
+              }
+             commentOrder= sortByDate(commentArrayAll).map((a, index)=>{
+                 const iddd=`comment${index}`
+                 if(a.email!==props.email){
+                     console.log(iddd)
+                    //  document.querySelector(`#${iddd}`).style.display="none"
+                     
+                 }
+                 return <div>
+                   <div className="commentChild1"> <p >   {a.userName}        </p>   </div> 
+                   <span>{a.content}</span>
+                   <button type="button" className="trashButton" value={a.id} key={index} id={iddd} onClick={deleteComment}>delete</button> 
+                 </div>
+             }) 
+            console.log(sortByDate(commentArrayAll))
+           
+
                 return <div className="commentsParent" key={index}>
-                <div className="commentChild1"> <p >   {p.name}        </p>   </div> 
+                {/* <div className="commentChild1"> <p >   {p.name}        </p>   </div> 
                <div className="commentChild2"> <p className="commentFont">  {commentList}</p>
                 {commentBox}
-                </div>
+                </div> */}
                </div>
     })}
     
@@ -113,7 +154,7 @@ function Comment (props){
     return(
 
         <div className="commentDisplay">
-          <h6>{authorList}</h6>
+          <h6>{commentOrder}</h6>
           <input id="inputComment" type="text" placeholder="Leave a Comment" onChange={ (e=>{setCommentsStore(e.target.value)})}></input>
           <button  id="comment" onClick={saveComment}>Comment</button>
         </div>
