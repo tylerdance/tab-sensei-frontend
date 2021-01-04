@@ -15,15 +15,20 @@
 }
 
 #beatBank {
-  border: solid black 1px;
+  /* border: solid black 1px; */
   text-align:center;
   /* background-color: goldenrod; */
   border-radius: 10px;
   margin-left: 80px;
   margin-top: 20px;
   margin-bottom: 20px;
-  flex: 20%;
-  height: 300px;
+  /* flex: 10%; */
+
+  width: 280px;
+}
+
+#beatBankHome{
+  flex:10%;
 }
 
 .recTabs {
@@ -63,7 +68,7 @@
 }
 
 #tabSearch {
-  flex: 45%;
+  flex: 50%;
  
 }
 

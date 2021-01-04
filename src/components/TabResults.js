@@ -13,7 +13,7 @@ function TabResults(props) {
         const link = `http://www.songsterr.com/a/wa/song?id=${p.id}`
        
         const handleClick=async(e)=>{
-            if(props.email===undefined){
+            if(props.email===null){
                 console.log("Please Log In To Save Tabs")
                 alert('Please Log In to Save Tabs')
             }

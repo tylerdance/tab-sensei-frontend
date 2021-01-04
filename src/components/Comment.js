@@ -13,7 +13,7 @@ function Comment (props){
 
    
    async function saveComment(){
-    if(props.email===undefined){
+    if(props.email===null){
         console.log("Please Log In To Save Tabs")
         alert('Must Be Logged In to Comment')
     }

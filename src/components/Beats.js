@@ -14,7 +14,7 @@ const[pace6, setPace6]=useState(1)
 
 function changePace1plus(e){
   e.preventDefault()
-  setPace1(pace1 + 0.055999999999999999999999999999999999999999999)
+  setPace1(pace1 + 0.041111111111111111111111111)
 }
 
 function changePace1minus(e){
@@ -22,12 +22,12 @@ function changePace1minus(e){
   if(pace1<=0.5){
     return
   }
-  setPace1(pace1 - 0.055999999999999999999999999999999999999999999)
+  setPace1(pace1 -  0.041111111111111111111111111)
 }
 
 function changePace2plus(e){
   e.preventDefault()
-  setPace2(pace2 + 0.055999999999999999999999999999999999999999999)
+  setPace2(pace2 + 0.041111111111111111111111111)
 }
 
 function changePace2minus(e){
@@ -35,12 +35,12 @@ function changePace2minus(e){
   if(pace2<=0.5){
     return
   }
-  setPace2(pace2 - 0.055999999999999999999999999999999999999999999)
+  setPace2(pace2 - 0.041111111111111111111111111)
 }
 
 function changePace3plus(e){
   e.preventDefault()
-  setPace3(pace3 + 0.055999999999999999999999999999999999999999999)
+  setPace3(pace3 + 0.041111111111111111111111111)
 }
 
 function changePace3minus(e){
@@ -48,7 +48,7 @@ function changePace3minus(e){
   if(pace3<=0.5){
     return
   }
-  setPace3(pace3 - 0.055999999999999999999999999999999999999999999)
+  setPace3(pace3 - 0.041111111111111111111111111)
 }
 
 function changePace4plus(e){
@@ -56,12 +56,12 @@ function changePace4plus(e){
     return
   }
   e.preventDefault()
-  setPace4(pace4 + 0.055999999999999999999999999999999999999999999)
+  setPace4(pace4 + 0.041111111111111111111111111)
 }
 
 function changePace4minus(e){
   e.preventDefault()
-  setPace4(pace4 - 0.055999999999999999999999999999999999999999999)
+  setPace4(pace4 - 0.041111111111111111111111111)
 }
 
 function changePace5plus(e){
@@ -69,12 +69,12 @@ function changePace5plus(e){
     return
   }
   e.preventDefault()
-  setPace5(pace5 + 0.055999999999999999999999999999999999999999999)
+  setPace5(pace5 + 0.04166666666666666666666666666666666666666666666)
 }
 
 function changePace5minus(e){
   e.preventDefault()
-  setPace5(pace5 - 0.055999999999999999999999999999999999999999999)
+  setPace5(pace5 - 0.04166666666666666666666666666666666666666666666)
 }
 
 function changePace6plus(e){
@@ -82,12 +82,12 @@ function changePace6plus(e){
     return
   }
   e.preventDefault()
-  setPace6(pace6 + 0.055999999999999999999999999999999999999999999)
+  setPace6(pace6 + 0.04166666666666666666666666666666666666666666666)
 }
 
 function changePace6minus(e){
   e.preventDefault()
-  setPace6(pace6 - 0.055999999999999999999999999999999999999999999)
+  setPace6(pace6 - 0.04166666666666666666666666666666666666666666666)
 }
   return (
     ///////////////
@@ -99,7 +99,7 @@ function changePace6minus(e){
     
       <span> BEAT 1 </span>
       <button onClick={changePace1minus}>-</button>
-      <p id="bpm">{Math.round(pace1*90)} BPM</p>
+      <p id="bpm">{Math.round(pace1*120)} BPM</p>
       <button onClick={changePace1plus}>+</button>
   
         </div>
@@ -122,7 +122,7 @@ function changePace6minus(e){
     
       <span> BEAT 2 </span>
       <button onClick={changePace2minus}>-</button>
-      <p id="bpm">{Math.round(pace2*90)} BPM</p>
+      <p id="bpm">{Math.round(pace2*120)} BPM</p>
       <button onClick={changePace2plus}>+</button>
   
         </div>
@@ -145,7 +145,7 @@ function changePace6minus(e){
     
       <span> BEAT 3 </span>
       <button onClick={changePace3minus}>-</button>
-      <p id="bpm">{Math.round(pace3*90)} BPM</p>
+      <p id="bpm">{Math.round(pace3*120)} BPM</p>
       <button onClick={changePace3plus}>+</button>
   
         </div>
@@ -168,7 +168,7 @@ function changePace6minus(e){
     
       <span> BEAT 4 </span>
       <button onClick={changePace4minus}>-</button>
-      <p id="bpm">{Math.round(pace4*90)} BPM</p>
+      <p id="bpm">{Math.round(pace4*120)} BPM</p>
       <button onClick={changePace4plus}>+</button>
   
         </div>
@@ -191,7 +191,7 @@ function changePace6minus(e){
     
       <span> BEAT 5 </span>
       <button onClick={changePace5minus}>-</button>
-      <p id="bpm">{Math.round(pace5*90)} BPM</p>
+      <p id="bpm">{Math.round(pace5*120)} BPM</p>
       <button onClick={changePace5plus}>+</button>
   
         </div>
@@ -214,7 +214,7 @@ function changePace6minus(e){
     
       <span> BEAT 6 </span>
       <button onClick={changePace6minus}>-</button>
-      <p id="bpm">{Math.round(pace6*90)} BPM</p>
+      <p id="bpm">{Math.round(pace6*120)} BPM</p>
       <button onClick={changePace6plus}>+</button>
   
         </div>
