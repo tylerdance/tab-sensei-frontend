@@ -30,20 +30,25 @@ const Signup = () => {
 
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
-        if (password === confirmPassword) {
+        if (password === confirmPassword && password.length >= 8) {
             const newUser = { name, email, password, image };
-            
-            axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
+            await axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
                 console.log(response);
                 setRedirect(true);
             })
             .catch(error => {
-                console.log(error);
+                console.log(error); 
+                alert('Email already in use')
             })
+        } else {
+            if (password !== confirmPassword) {
+                alert('Password confirmation does not match password')
+            } else {
+                alert('Password must be at least 8 characters')
+            }
         }
     }
 
