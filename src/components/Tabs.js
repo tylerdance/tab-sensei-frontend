@@ -3,7 +3,7 @@ import Axios from 'axios';
 import Videos from './Videos';
 import TabResults from './TabResults';
 import BeatBank from './BeatBank';
-import LoadingPage from "./LoadingPage"
+
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 class Tabs extends Component {
@@ -50,7 +50,7 @@ class Tabs extends Component {
                         <h1>Loading</h1>:
                         <div></div>}
                         <Videos className="Videos" videos={this.props.videos} />
-                    </div>
+                     </div>
                     <div id="tabSearch ">
                         <div id="starships">
                             <TabResults tabs={this.props.tabs} email={this.props.email} toggle={this.props.toggle} />
@@ -61,7 +61,7 @@ class Tabs extends Component {
                         <BeatBank />
                     </div>
                     </div>
-                </div>
+              </div>
             )
     }
 }
