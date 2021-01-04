@@ -15,6 +15,7 @@ const Profile = (props) => {
     const [newComment, setNewComment]= useState(false)
     console.log("line 9")
     console.log(props);
+    console.log('hi');
     const userData = props.user ? 
     (<div>
         {/* <h1>Profile</h1> */}

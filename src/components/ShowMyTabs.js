@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Comment from "./Comment";
 import Axios from 'axios';
-import Icon from 'react-svg-use';
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
