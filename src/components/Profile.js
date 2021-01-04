@@ -16,6 +16,7 @@ const Profile = (props) => {
     console.log("line 9")
     console.log(props);
     console.log('hi');
+    console.log('starships sos');
     const userData = props.user ? 
     (<div>
         {/* <h1>Profile</h1> */}
