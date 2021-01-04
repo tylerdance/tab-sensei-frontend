@@ -18,11 +18,10 @@ const Login = (props) => {
         setPassword(e.target.value);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const userData = { email, password };
-
-        axios.post(`${REACT_APP_SERVER_URL}/api/users/login`, userData)
+        await axios.post(`${REACT_APP_SERVER_URL}/api/users/login`, userData)
         .then(response => {
             const { token } = response.data;
             // Save token to localStorage
@@ -36,6 +35,7 @@ const Login = (props) => {
         })
         .catch(error =>{
             console.log(error);
+            alert('Either email or password is incorrect')
         })
     }
 
