@@ -6,6 +6,8 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 function Comment (props){
     const [comments, setComments] = useState([])
     const [commentsStore, setCommentsStore] = useState('')
+    const [image, setImage] = useState('')
+
 
     async function saveComment(){
     if(props.email===null){
@@ -64,8 +66,10 @@ function Comment (props){
     async function deleteComment(e){
       e.preventDefault()
     //   console.log(e.target.value)
-      const userData= {_id: e.target.value,
-                       email: props.email}
+        const userData= {
+            _id: e.target.value,
+            email: props.email
+        }
         await Axios.put(`${REACT_APP_SERVER_URL}/api/users/profile/comments/delete`, userData)
         .then( res=>{
         //   console.log(res); 
@@ -83,45 +87,99 @@ let commentOrder;
         authorList = comments.map((p, index)=>{
             const commentMap = p.comments
             const commentList = commentMap.map((b, index)=>{
+                // let count = 0
                 if(b.songsterr_id === props.songId){
+                    // count = count + 1
+                    let img
                     commentArrayAll.push({
-                       userName: p.name,
-                       content: b.content,
-                       date: b.date,
-                       id: b._id, 
-                       email: b.email
+                        userName: p.name,
+                        content: b.content,
+                        date: b.date,
+                        id: b._id, 
+                        email: b.email,
+                        image: img,
                     })
-                        return <div>
-                </div>
+
+                    return <div>
+                    </div>
                 }
             })
-
-            function sortByDate(arr) {
-                arr.sort(function(a,b){
-                  return a.date - b.date;
-                });
-                // console.log(arr)
-                return arr;
+            async function getImages(arr) {
+                for(let i = 0; i < arr.length; i++) {
+                    await Axios.get(`${REACT_APP_SERVER_URL}/api/users/myphoto/${i.email}`)
+                    .then(res=>{
+                        arr[i].image = 'http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866972/anime_girl3_pws5li.png'
+                        console.log(arr[i]);
+                        // console.log(res.data)
+                        // commentArrayAll[count - 1].image = 'http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866972/anime_girl3_pws5li.png'
+                        // console.log(commentArrayAll[count - 1]);
+                        // img = 'http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866972/anime_girl3_pws5li.png'
+                        // img = res.data.user[0].image_url
+                    })
+                    .catch(err=>{
+                        // console.log(err)
+                    })
+                }
+                return arr
             }
 
-            commentOrder= sortByDate(commentArrayAll).map((a, index)=>{
-                const iddd=`comment${index}`
+            function sortByDate(arr) {
+                function starships(array) {
+                    array.sort(function(a,b){
+                        return a.date - b.date;
+                    });
+                    // console.log(arr)
+                    // getImages(arr)
+                    return array;
+                }
+                arr.sort(function(a,b){
+                    return a.date - b.date;
+                });
+                // console.log(arr)
+                // starships()
+                getImages(starships(arr))
+                return arr;
+            }
+            
 
-                 return <div>
-                   <div className="commentChild1"> <p >   {a.userName}        </p>   </div> 
-                   <span>{a.content}</span>
-                    {
-                       a.email===props.email
-                       ?
-                       <button type="button" className="trashButton" value={a.id} key={index}  onClick={deleteComment}>delete</button>
-                       :
-                       <div>
+            commentOrder = sortByDate(commentArrayAll).map((a, index) => {
+                const iddd=`comment${index}`
+                // console.log(a);
+                return <div>
+                    <div className="commentDiv">
+                        <div className="commentAuthor">
+                            <div>
+                                <span><img className="authorPic" src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866972/anime_girl3_pws5li.png"></img></span>
+                            </div>
+                            <div className="authorDiv">
+                                <p className="targetAuthor">{a.userName}</p>
+                            </div>
                         </div>
-                    }
+
+                        <div className="commentContent">
+                            <div>
+                                <p className="targetContent">{a.content}</p>
+                            </div>
+                            <div>
+                                <div className="targetDelete">
+                                    {
+                                        a.email===props.email
+                                        ?
+                                        <div>
+                                            <button type="button" className="trashButton" value={a.id} key={index}  onClick={deleteComment}>delete</button>
+                                        </div>
+                                        :
+                                        <div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                  </div>
             }) 
-                return <div className="commentsParent" key={index}>
-                </div>
+            return <div className="commentsParent" key={index}>
+            </div>
     })}
 
     return(

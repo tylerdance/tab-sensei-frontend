@@ -14,16 +14,12 @@ class Home extends Component {
         return ( 
             <> 
             <div >
-            <h2 id="featured_tabs">Featured Tabs</h2>
+            {/* <h2 id="featured_tabs">Featured Tabs</h2> */}
             <div id="heading">
             <div className='recTabs'>
         
-            <RecTabs />
-                </div>
-                </div>
-            <div className='home_elements'>
-                <div className='tabs'>
-                </div>
+                <RecTabs />
+            </div>
             </div>
             </div>
             </>

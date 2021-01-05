@@ -1,3 +1,11 @@
+body {
+  background-color: #d3dadf;
+}
+
+.App {
+  /* background-color: ; */
+}
+
 .home_elements {
   display: flex;
  
@@ -14,6 +22,33 @@
   border-top: solid 2px rgba(169, 169, 169, 0.63);
 }
 
+.tabResultName {
+  font-family: 'Amatic SC', cursive;
+  font-size: 27px;
+}
+
+/* .songTitle {
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+} */
+
+#bpm {
+  background-color: #ffffff;
+  width:80px;
+  display: inline-block;
+}
+
+.bpmUpDown {
+  border-radius: 20px;
+  /* height: 28px; */
+}
+
+.bpmUpDown:hover {
+  cursor: pointer;
+  color: rgb(145, 235, 205);
+  background-color: darksalmon;
+}
+
 #beatBank {
   /* border: solid black 1px; */
   text-align:center;
@@ -27,8 +62,27 @@
   width: 280px;
 }
 
+.beat {
+  margin: 8px;
+  background-color: #c2c1c1;
+  border-radius: 10px;
+  position: relative;
+}
+
 #beatBankHome{
   flex:10%;
+}
+
+#beatSpeed {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.beat-title {
+  color: rgb(0, 0, 0);
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+  font-weight: 300;
 }
 
 .recTabs {
@@ -37,8 +91,10 @@
   text-align:center;
   /* background-color: goldenrod; */
   border-radius: 10px;
-  margin: auto;
- 
+  /* margin: auto; */
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
  
 }
 
@@ -73,18 +129,20 @@
 .searchTabs {
   /* background-color: aqua; */
   width: 550px;
-  margin-left: 45%;
+  margin-left: 30%;
+  margin-top: 1%;
+  /* margin: auto; */
 }
 
 /* .searchDiv {
   position: relative;
 } */
 
-#nestedSearch {
-  /* margin-left: 70px;
-  margin-top: 5px; */
-  /* position: relative; */
-}
+/* #nestedSearch {
+  margin-left: 70px;
+  margin-top: 5px; 
+  position: relative;
+} */
 
 #header {
   font-size: 40px;
@@ -103,16 +161,10 @@
   height:180px;
   text-decoration: none;
   margin: auto;
- 
 }
 
 p {
   font-size: 15px;
-}
-
-#beatSpeed {
-  font-size: 12px;
-  font-weight: 900;
 }
 
 .tab_image {
@@ -135,9 +187,10 @@ p {
 }
 
 #anime_girl{
-  width:200px;
-  height:200px;
+  width: 250px;
+  height: 300px;
   object-fit: cover;
+  opacity: 80%;
 }
 
 #featured_tabs {
@@ -159,28 +212,24 @@ p {
   flex:40%;
 }
 
-.beat {
-  margin: 8px;
-  background-color: rgba(218, 218, 218, 0.808);
-  border-radius: 10px;
-  position: relative;
-}
-
 .profilepic{
   display: inline-block;
- margin: 0px;
-  width: 50px;
-  height: 50px;
+  margin: 0px;
+  width: 45px;
+  height: 45px;
   object-fit: cover;
   border-radius: 100%;
   position: relative;
 }
 
-.tabScroll{
+.choosePicForm {
+  display: flex;
+  position: relative;
+}
 
+.tabScroll{
   display:flex;
   position: relative;
-
 }
 
 .tabScroll1 {
@@ -209,7 +258,7 @@ p {
 }
 
 .commentDisplay{
-  background-color: rgba(169, 169, 169, 0.527);
+  background-color: #c2c1c1;
   width: 80%;
   margin: auto;
   border-radius: 10px;
@@ -226,25 +275,80 @@ p {
 }
 .commentChild2 {
   flex:80%;
-
 }
 
-.nav_display{
-  display:inline;
-  position:relative;
+.commentAuthor {
+  text-align: left;
+  /* background-color: rgb(255, 0, 247); */
+  margin: auto;
+  /* margin-top: 2px; */
+  width: 130px;
+  display: flex;
+  position: relative;
+  font-size: 10px;
+  font-weight: 600;
 }
 
-#bpm {
-  background-color: rgba(255, 145, 0, 0.473);
-  width:80px;
-  display: inline-block;
+.targetAuthor{
+  margin-top: 4px;
+  padding-top: 8px;
+  margin-left: 2px;
+}
 
+.commentContent {
+  /* background-color: chocolate; */
+  margin: auto;
+  font-size: 1px;
+  width: 200px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.targetContent {
+  /* margin-top: px; */
+  margin-bottom: 0;
+}
+
+.commentDiv {
+  /* background-color: chartreuse; */
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.063);
+  /* margin-top: 8px; */
+}
+
+.targetDelete {
+  margin-top: 8px;
+  /* margin-left: 99%; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.authorPic {
+  /* margin-bottom: 0px;
+  margin-right: auto;
+  margin-left: auto; */
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-top: 7px;
+}
+
+/* .nav_display{ */
+  /* display:inline; */
+  /* position:relative; */
+/* } */
+
+.nav-link {
+  margin-top: 2px;
 }
 
 .speedDaddy{
   text-align: center;
   position: relative;
-  
 }
 
 .trashButton {
@@ -252,22 +356,32 @@ p {
   font-size: 10px;
   margin-left: 5px;
   border-radius: 5px;
- 
+  text-align: right;
 }
+
+.trashButton:hover {
+  cursor: pointer;
+  /* background-color: red; */
+  color: red;
+}
+
+
 
 .trashButton1 {
   border: none;
   font-size: 10px;
   margin-left: 5px;
   border-radius: 5px;
-   display: none;
+  display: none;
 }
-.chooseFile{
-   font-size: 8px;
-   height: 20px;
-   width:40px;
-   color: rgba(0, 0, 0, 0);
-   margin-right: 50px; 
+.chooseFile {
+  font-size: 8px;
+  height: 20px;
+  width:40px;
+  color: rgba(0, 0, 0, 0);
+  margin-right: 30px; 
+  margin-top: 15px;
+  /* border-radius: 20px; */
 }
 
  .submitPhoto {
@@ -275,8 +389,9 @@ p {
   height: 20px;
   width:40px;
   color: rgba(0, 0, 0, 1);
-  margin-right: 50px;
-  
+  margin-right: 30px; 
+  margin-top: 15px;
+  /* border-radius: 20px; */
 }
 
 .saveButton {
@@ -284,11 +399,29 @@ p {
   font-size: 10px;
   margin-left: 5px;
   border-radius: 5px;
-  flex:20%;
+  flex: 20%;
+}
+
+.deleteTabButton {
+  border: none;
+  font-size: 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  flex: 20%;
+}
+
+.deleteTabButton:hover {
+  cursor: pointer;
+  color: red;
 }
 
 #inputComment {
   font-size: 10px;
+}
+
+#comment:hover {
+  cursor: pointer;
+  color: rgb(39, 208, 197)
 }
 
 .commentFont {
@@ -307,3 +440,13 @@ p {
   display: flex;
 }
 
+.starshipsFooter {
+  color: rgb(232, 244, 255);
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  position: fixed;
+  bottom: 0%;
+}

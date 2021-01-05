@@ -97,10 +97,10 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span> BEAT 1 </span>
-      <button onClick={changePace1minus}>-</button>
+      <span className="beat-title"> BEAT 1 </span>
+      <button className="bpmUpDown" onClick={changePace1minus}>-</button>
       <p id="bpm">{Math.round(pace1*120)} BPM</p>
-      <button onClick={changePace1plus}>+</button>
+      <button className="bpmUpDown" onClick={changePace1plus}>+</button>
   
         </div>
         </div>
@@ -108,7 +108,7 @@ function changePace6minus(e){
     <ReactPlayer
         url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643228/sensei-beat-1-_60_sec_eaev0o.mp3 "
         width="250px"
-        height="15px"
+        height="19px"
         playing={false}
         controls={true}
         loop={true}
@@ -120,10 +120,10 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span> BEAT 2 </span>
-      <button onClick={changePace2minus}>-</button>
+      <span className="beat-title"> BEAT 2 </span>
+      <button className="bpmUpDown" onClick={changePace2minus}>-</button>
       <p id="bpm">{Math.round(pace2*120)} BPM</p>
-      <button onClick={changePace2plus}>+</button>
+      <button className="bpmUpDown" onClick={changePace2plus}>+</button>
   
         </div>
         </div>
@@ -131,7 +131,7 @@ function changePace6minus(e){
     <ReactPlayer
         url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643253/sensei-beat-2-_60_sec_gtceyc.mp3"
         width="250px"
-        height="15px"
+        height="19px"
         playing={false}
         controls={true}
         loop={true}
@@ -143,10 +143,10 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span> BEAT 3 </span>
-      <button onClick={changePace3minus}>-</button>
+      <span className="beat-title"> BEAT 3 </span>
+      <button className="bpmUpDown" onClick={changePace3minus}>-</button>
       <p id="bpm">{Math.round(pace3*120)} BPM</p>
-      <button onClick={changePace3plus}>+</button>
+      <button className="bpmUpDown" onClick={changePace3plus}>+</button>
   
         </div>
         </div>
@@ -154,7 +154,7 @@ function changePace6minus(e){
     <ReactPlayer
         url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643276/sensei-beat-3-_60_sec_hdznq8.mp3"
         width="250px"
-        height="15px"
+        height="19px"
         playing={false}
         controls={true}
         loop={true}
@@ -166,10 +166,10 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span> BEAT 4 </span>
-      <button onClick={changePace4minus}>-</button>
+      <span className="beat-title"> BEAT 4 </span>
+      <button className="bpmUpDown" onClick={changePace4minus}>-</button>
       <p id="bpm">{Math.round(pace4*120)} BPM</p>
-      <button onClick={changePace4plus}>+</button>
+      <button className="bpmUpDown" onClick={changePace4plus}>+</button>
   
         </div>
         </div>
@@ -177,7 +177,7 @@ function changePace6minus(e){
     <ReactPlayer
         url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643793/sensei-beat-4-_60_sec_zwvtnw.mp3"
         width="250px"
-        height="15px"
+        height="19px"
         playing={false}
         controls={true}
         loop={true}
@@ -189,10 +189,10 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span> BEAT 5 </span>
-      <button onClick={changePace5minus}>-</button>
+      <span className="beat-title"> BEAT 5 </span>
+      <button className="bpmUpDown" onClick={changePace5minus}>-</button>
       <p id="bpm">{Math.round(pace5*120)} BPM</p>
-      <button onClick={changePace5plus}>+</button>
+      <button className="bpmUpDown" onClick={changePace5plus}>+</button>
   
         </div>
         </div>
@@ -200,7 +200,7 @@ function changePace6minus(e){
     <ReactPlayer
         url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643812/sensei-beat-5-_60_sec_xzatrr.mp3"
         width="250px"
-        height="15px"
+        height="19px"
         playing={false}
         controls={true}
         loop={true}
@@ -212,10 +212,10 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span> BEAT 6 </span>
-      <button onClick={changePace6minus}>-</button>
+      <span className="beat-title"> BEAT 6 </span>
+      <button className="bpmUpDown" onClick={changePace6minus}>-</button>
       <p id="bpm">{Math.round(pace6*120)} BPM</p>
-      <button onClick={changePace6plus}>+</button>
+      <button className="bpmUpDown" onClick={changePace6plus}>+</button>
   
         </div>
         </div>
@@ -223,7 +223,7 @@ function changePace6minus(e){
     <ReactPlayer
         url="https://res.cloudinary.com/df3zbbtc1/video/upload/v1609643834/sensei-beat-6-_60_sec_yx0hqu.wav"
         width="250px"
-        height="15px"
+        height="19px"
         playing={false}
         controls={true}
         loop={true}

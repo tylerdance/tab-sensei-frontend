@@ -255,11 +255,11 @@ class RecTabs extends Component {
         const song4 = shuffled[3]
         const song5 = shuffled[4]
         const song6 = shuffled[5]
-        // const song7 = shuffled[6]
+        const song7 = shuffled[6]
         
         return ( 
             <div>
-               
+               <h2 id="featured_tabs">Featured Tabs</h2>
             <div id="rec_tabs_line">
                 <a href={song1.url} target="_blank" rel="noreferrer">
                 <div className='each_rec_song'>
@@ -302,6 +302,13 @@ class RecTabs extends Component {
                 <br/>
                 <p className="song_title" >{song6.title}</p>
                 <p className="song_artist">{song6.artist}</p>
+            </div></a>
+            <a href={song6.url} target='_blank'>
+                <div className='each_rec_song'>
+                <img className="tab_image" src={song7.image} alt="" />
+                <br/>
+                <p className="song_title" >{song7.title}</p>
+                <p className="song_artist">{song7.artist}</p>
             </div></a>
             </div>
             </div>

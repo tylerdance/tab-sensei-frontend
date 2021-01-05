@@ -49,7 +49,7 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarsExample07">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            {/* <NavLink className="nav-link"  to="/about">About</NavLink> */}
+                            <NavLink className="nav-link"  to="/about">About</NavLink>
                         </li>
                         <li className="searchTabs">
                             <div className="searchDiv">
@@ -68,7 +68,9 @@ const Navbar = (props) => {
                             <li> <Image email={props.user.email} pic={setPic}/></li>
                             <li> <img src={photo} className="profilepic" alt="" /></li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/profile">{props.user.name}</NavLink>
+                                <div>
+                                    <NavLink className="nav-link" to="/profile">{props.user.name}</NavLink>
+                                </div>
                             </li>
                             <li className="nav-item">
                                 <span onClick={props.handleLogout} className="nav-link logout-link">Logout</span>

@@ -54,13 +54,15 @@ class Image extends Component {
             <div>
                 <section className="left-side">
                     <form>
-                        <div >
-                        <input className="chooseFile"  type="file"/>
-                        </div>
+                      <div className="choosePicForm">
                         <div>
-                          <button type="button"  className="submitPhoto" onClick={this.handleImageUpload}
-                          >Submit</button>
+                          <input className="chooseFile"  type="file"/>
                         </div>
+
+                        <div>
+                          <button type="button" className="submitPhoto" onClick={this.handleImageUpload}>Submit</button>
+                        </div>
+                      </div>
                     </form>
                 </section>
                 <section className="right-side">

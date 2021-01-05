@@ -3,13 +3,8 @@ import React from 'react';
 function About() {
     return(
         <div>
-            <h1>About</h1>
-            <p>This is the about page</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Tempore dolorum excepturi, pariatur dolore fuga perferendis 
-                mollitia deserunt a voluptas assumenda! Consequatur beatae qui 
-                dolorem tempora possimus accusantium, fugit eius quidem
-            </p>
+            <h2>Welcome to Tab Sensei!</h2>
+            <p>Here you can search tabs from Songsterr, play along with a YouTube tutorial, and jam to one of our beats.</p>
         </div>
     )
 }

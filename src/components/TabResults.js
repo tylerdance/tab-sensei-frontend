@@ -75,7 +75,7 @@ function TabResults(props) {
         <div className="tabLink">
             <a href={link} target="_blank" rel="noreferrer" className=""> 
             <div class="tabResultName">
-                <span className="link" >{p.title}</span>
+                <span className="link">{p.title}</span>
                 <span className = "tabNames"> Artist: {p.artist.name}</span> 
             </div> 
             </a>

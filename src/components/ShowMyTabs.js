@@ -22,7 +22,7 @@ function ShowMyTabs(props){
             // console.log(err)
         })
         setDeleteTab(e.target.value)
-       
+        // setDeleteTab(e.target.value)
     }
 
     const tabs = props.mytabs.map((p, index)=>{
@@ -34,7 +34,7 @@ function ShowMyTabs(props){
             <a className="link" href={link} target="_blank" rel="noreferrer"><span className="song_title">{p.title} -</span>
             <span className = "tabNames"> {p.artist[0].name}</span></a>
             </div>
-                <button type="button" value={p._id} onClick={handleClick} className='saveButton'>delete</button>
+                <button type="button" value={p._id} onClick={handleClick} className="deleteTabButton">delete tab</button>
             </div>
             <Comment songId={p.songsterr_id} email={props.email} />
         </div>

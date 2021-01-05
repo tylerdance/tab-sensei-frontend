@@ -5,8 +5,6 @@ import HomeClone from './HomeClone'
 import {useState} from 'react'
 import BeatBank from './BeatBank.js';
 
-
-
 const Profile = (props) => {
 
     const [newTab, setNewTab]= useState(false)
@@ -31,10 +29,10 @@ const Profile = (props) => {
         <div>
             <div className="tabScroll4">
              
-            < div className="tabScroll">
+            <div className="tabScroll">
                 <div className="tabScroll1">
                 <h2 id="header">タブの先生</h2>
-                <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609209287/anime_girl3_ilzqfv.png" id="anime_girl" alt="anime guitar girl"/> 
+                <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866376/anime_girl_cropp_lvkjc3.png" id="anime_girl" alt="anime guitar girl"/> 
                 </div>
                 <div className="tabScroll2">
               
@@ -45,7 +43,7 @@ const Profile = (props) => {
                 </div>
                 </div>
                 </div>
-            <HomeClone email={props.user.email}  toggle={setNewTab} tabs={props.tabs} videos={props.videos}/>
+            <HomeClone email={props.user.email}  toggle={setNewTab} tabs={props.tabs} videos={props.videos} />
         </div>
     );
 }
