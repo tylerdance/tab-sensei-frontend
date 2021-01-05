@@ -81,8 +81,8 @@ body {
 .beat-title {
   color: rgb(0, 0, 0);
   font-family: 'Amatic SC', cursive;
-  font-size: 25px;
-  font-weight: 300;
+  font-size: 23px;
+  font-weight: 500;
 }
 
 .recTabs {
@@ -180,10 +180,14 @@ p {
 .song_title {
   color: blue;
   margin-bottom: 0px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
 }
 
 .song_artist {
   color: black;
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
 }
 
 #anime_girl{
@@ -195,6 +199,8 @@ p {
 
 #featured_tabs {
   text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 50px;
 }
 
 .speed {
@@ -287,6 +293,8 @@ p {
   position: relative;
   font-size: 10px;
   font-weight: 600;
+  margin-top: 0px;
+
 }
 
 .targetAuthor{
@@ -307,16 +315,18 @@ p {
 }
 
 .targetContent {
-  /* margin-top: px; */
-  margin-bottom: 0;
+  margin-top: 12px;
+  margin-left: 10px;
+  /* margin-bottom: 0px; */
+  /* margin: 5px; */
 }
 
 .commentDiv {
   /* background-color: chartreuse; */
   display: flex;
   position: relative;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.063);
-  /* margin-top: 8px; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.235);
+  /* margin-top: 0px; */
 }
 
 .targetDelete {

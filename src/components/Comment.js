@@ -97,7 +97,7 @@ let commentOrder;
                         date: b.date,
                         id: b._id, 
                         email: b.email,
-                        image: img,
+                        image: p.image_url,
                     })
 
                     return <div>
@@ -149,7 +149,7 @@ let commentOrder;
                     <div className="commentDiv">
                         <div className="commentAuthor">
                             <div>
-                                <span><img className="authorPic" src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866972/anime_girl3_pws5li.png"></img></span>
+                                <span><img className="authorPic" src={a.image}></img></span>
                             </div>
                             <div className="authorDiv">
                                 <p className="targetAuthor">{a.userName}</p>
