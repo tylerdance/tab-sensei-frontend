@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class RecTabs extends Component {
-    
     render() { 
         const bestSongsInTheWorld = [
             {
@@ -230,31 +229,25 @@ class RecTabs extends Component {
             },
 ]
 
-
-
-        console.log(bestSongsInTheWorld.length)
-
-
+        // console.log(bestSongsInTheWorld.length)
         function shuffle(array) {
             var currentIndex = array.length, temporaryValue, randomIndex;
           
             // While there remain elements to shuffle...
             while (0 !== currentIndex) {
           
-              // Pick a remaining element...
-              randomIndex = Math.floor(Math.random() * currentIndex);
-              currentIndex -= 1;
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
           
               // And swap it with the current element.
-              temporaryValue = array[currentIndex];
-              array[currentIndex] = array[randomIndex];
-              array[randomIndex] = temporaryValue;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
             }
-          
             return array;
-          }
-          
-
+        }
+        
         let shuffled = shuffle(bestSongsInTheWorld)
         const song1 = shuffled[0]
         const song2 = shuffled[1]
@@ -264,69 +257,56 @@ class RecTabs extends Component {
         const song6 = shuffled[5]
         // const song7 = shuffled[6]
         
-       
-
         return ( 
             <div>
                
             <div id="rec_tabs_line">
-                <a href={song1.url} target='_blank'>
+                <a href={song1.url} target="_blank" rel="noreferrer">
                 <div className='each_rec_song'>
-                <img className="tab_image" src={song1.image}/>
+                <img className="tab_image" src={song1.image} alt="" />
                 <br/>
                 <p className="song_title" >{song1.title}</p>
                 <p className="song_artist">{song1.artist}</p>
             </div></a>
             <a href={song2.url} target='_blank'>
                 <div className='each_rec_song'>
-                <img className="tab_image" src={song2.image}/>
+                <img className="tab_image" src={song2.image} alt="" />
                 <br/>
                 <p className="song_title" >{song2.title}</p>
                 <p className="song_artist">{song2.artist}</p>
             </div></a>
             <a href={song3.url} target='_blank'>
                 <div className='each_rec_song'>
-                <img className="tab_image" src={song3.image}/>
+                <img className="tab_image" src={song3.image} alt="" />
                 <br/>
                 <p className="song_title" >{song3.title}</p>
                 <p className="song_artist">{song3.artist}</p>
             </div></a>
             <a href={song4.url} target='_blank'>
                 <div className='each_rec_song'>
-                <img className="tab_image" src={song4.image}/>
+                <img className="tab_image" src={song4.image} alt="" />
                 <br/>
                 <p className="song_title" >{song4.title}</p>
                 <p className="song_artist">{song4.artist}</p>
             </div></a>
             <a href={song5.url} target='_blank'>
                 <div className='each_rec_song'>
-                <img className="tab_image" src={song5.image}/>
+                <img className="tab_image" src={song5.image} alt="" />
                 <br/>
                 <p className="song_title" >{song5.title}</p>
                 <p className="song_artist">{song5.artist}</p>
             </div></a>
             <a href={song6.url} target='_blank'>
                 <div className='each_rec_song'>
-                <img className="tab_image" src={song6.image}/>
+                <img className="tab_image" src={song6.image} alt="" />
                 <br/>
                 <p className="song_title" >{song6.title}</p>
                 <p className="song_artist">{song6.artist}</p>
             </div></a>
-            {/* <a href={song7.url} target='_blank'>
-                <div className='each_rec_song'>
-                <img className="tab_image" src={song7.image}/>
-                <br/>
-                <p className="song_title" >{song7.title}</p>
-                <p className="song_artist">{song7.artist}</p>
-            </div></a> */}
-
             </div>
             </div>
-         );
+        );
     }
 }
  
 export default RecTabs;
-
-        
-        

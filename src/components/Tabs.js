@@ -20,6 +20,7 @@ class Tabs extends Component {
     }
 
     async componentDidMount() {
+        // loading message
         setTimeout(
             function() {
                 this.setState({ loading: false });
@@ -46,11 +47,13 @@ class Tabs extends Component {
             return(
                 <div className="bigApp">
                     <div id="youTube">
-                        {this.state.loading===true?
-                        <h1>Loading</h1>:
+                        {this.state.loading===true
+                        ?
+                        <h1>Loading</h1>
+                        :
                         <div></div>}
                         <Videos className="Videos" videos={this.props.videos} />
-                     </div>
+                    </div>
                     <div id="tabSearch ">
                         <div id="starships">
                             <TabResults tabs={this.props.tabs} email={this.props.email} toggle={this.props.toggle} />

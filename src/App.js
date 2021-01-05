@@ -1,10 +1,7 @@
-// Imports
 import React, { useEffect, useState } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
-
-// CSS
 import './App.css';
 // Components
 import Home from './components/Home';
@@ -15,8 +12,6 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import About from './components/About';
 import Tabs from './components/Tabs';
-import LoadingPage from './components/LoadingPage'
-
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem('jwtToken');
@@ -47,7 +42,7 @@ function App() {
   []);
 
   const nowCurrentUser = (userData) => {
-    console.log('nowCurentUser is here...');
+    // console.log('nowCurentUser is here...');
     setCurrentUser(userData);
     setIsAuthenticated(true);
   }
@@ -76,7 +71,7 @@ function App() {
           {/* <Route path="/results" component={ Tabs }   user={currentUser} tabs={tabs} videos={videos}/> */}
           <Route path="/results" render={()=>{
              return <Tabs email={currentUser ? currentUser.email: null} tabs={tabs} videos={videos} /> 
-             }} />
+          }} />
        
         </Switch>
       </div>

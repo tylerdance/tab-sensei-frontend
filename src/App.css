@@ -63,16 +63,28 @@
 
 #youTube {
   flex:30%;
-
   margin-right:80px;
 }
 
 #tabSearch {
   flex: 50%;
- 
 }
 
+.searchTabs {
+  /* background-color: aqua; */
+  width: 550px;
+  margin-left: 45%;
+}
 
+/* .searchDiv {
+  position: relative;
+} */
+
+#nestedSearch {
+  /* margin-left: 70px;
+  margin-top: 5px; */
+  /* position: relative; */
+}
 
 #header {
   font-size: 40px;
@@ -93,7 +105,6 @@
   margin: auto;
  
 }
-
 
 p {
   font-size: 15px;
@@ -188,8 +199,6 @@ p {
   margin-left: 40px;
 }
 
-
-
 #comment {
   font-size: 10px;
   border-radius: 5px;
@@ -204,8 +213,6 @@ p {
   width: 80%;
   margin: auto;
   border-radius: 10px;
- 
-  
 }
 
 .commentsParent {
@@ -241,8 +248,6 @@ p {
 }
 
 .trashButton {
-
- 
   border: none;
   font-size: 10px;
   margin-left: 5px;
@@ -251,28 +256,25 @@ p {
 }
 
 .trashButton1 {
-
- 
   border: none;
   font-size: 10px;
   margin-left: 5px;
   border-radius: 5px;
    display: none;
 }
- .chooseFile{
+.chooseFile{
    font-size: 8px;
    height: 20px;
    width:40px;
    color: rgba(0, 0, 0, 0);
-   margin-right: 50px;
-   
- }
+   margin-right: 50px; 
+}
 
  .submitPhoto {
   font-size: 8px;
   height: 20px;
   width:40px;
-  color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 1);
   margin-right: 50px;
   
 }

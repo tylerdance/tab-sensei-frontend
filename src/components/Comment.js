@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function Comment (props){
-    const  [comments, setComments] = useState([])
+    const [comments, setComments] = useState([])
     const [commentsStore, setCommentsStore] = useState('')
+
     async function saveComment(){
     if(props.email===null){
         // console.log("Please Log In To Save Tabs")
@@ -15,21 +16,28 @@ function Comment (props){
         //  console.log(props.songId)
         //  console.log(props.email)
         //  console.log( moment(Date.now()).format())
-         const userData = {
-             email: props.email,
-             tab_id:  props.songId,
-             content: commentsStore,
-             time: Date.now(), 
-             email: props.email
-         }
-         if(commentsStore===""){
+        const userData = {
+            email: props.email,
+            tab_id:  props.songId,
+            content: commentsStore,
+            time: Date.now(), 
+        }
+        // prevents saving empty comment
+        if(commentsStore===""){
              return
-         }
-         await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
-         .then(res=>{console.log(res); getComments();})
-         .catch(err=>{console.log(err)})
+        }
+
+        await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
+        .then(res=>{
+            // console.log(res); 
+            getComments();
+        })
+        .catch(err=>{
+            // console.log(err)
+        })
 
     }
+
     async function getComments  () {
         // console.log('GET COMMMMMMENTS')
         let url = await `${REACT_APP_SERVER_URL}/api/users/tabs/${props.songId}`
@@ -51,21 +59,23 @@ function Comment (props){
     useEffect(()=>{  
         getComments()
     },[])
+
 // function leaveComment () {
     async function deleteComment(e){
       e.preventDefault()
     //   console.log(e.target.value)
       const userData= {_id: e.target.value,
                        email: props.email}
-      await Axios.put(`${REACT_APP_SERVER_URL}/api/users/profile/comments/delete`, userData)
-      .then( res=>{
+        await Axios.put(`${REACT_APP_SERVER_URL}/api/users/profile/comments/delete`, userData)
+        .then( res=>{
         //   console.log(res); 
-          getComments()})
-          .catch(err=>{console.log(err)})
+        getComments()})
+        .catch(err=>{console.log(err)})
     }  
 
     let commentBox = <div>
     </div>
+
 let commentOrder;
     const commentArrayAll=[]
     let authorList=commentBox;
@@ -85,40 +95,46 @@ let commentOrder;
                 </div>
                 }
             })
+
             function sortByDate(arr) {
                 arr.sort(function(a,b){
                   return a.date - b.date;
                 });
-                console.log(arr)
+                // console.log(arr)
                 return arr;
-              }
+            }
+
             commentOrder= sortByDate(commentArrayAll).map((a, index)=>{
                 const iddd=`comment${index}`
 
                  return <div>
                    <div className="commentChild1"> <p >   {a.userName}        </p>   </div> 
                    <span>{a.content}</span>
-                   {
+                    {
                        a.email===props.email
                        ?
                        <button type="button" className="trashButton" value={a.id} key={index}  onClick={deleteComment}>delete</button>
                        :
                        <div>
-                           </div>
-                   }
+                        </div>
+                    }
                  </div>
             }) 
                 return <div className="commentsParent" key={index}>
-               </div>
+                </div>
     })}
+
     return(
         <div className="commentDisplay">
           <h6>{commentOrder}</h6>
-         <form onSubmit={e=>{e.target.reset(); e.preventDefault()}}>
-          <input id="inputComment" type="text" placeholder="Leave a Comment"  onChange={(e=>{setCommentsStore(e.target.value)})}></input>
-          <button  id="comment" onClick={saveComment }>Comment</button>
-          </form>
+
+            {/* clears input field, prevents refresh, prevents previous comment from being submitted again onClick */}
+        <form onSubmit={e=>{e.target.reset(); e.preventDefault(); setCommentsStore('')}}>
+          <input id="inputComment" type="text" placeholder="Leave a Comment" onChange={(e=>{setCommentsStore(e.target.value)})}></input>
+          <button id="comment" onClick={saveComment}>Comment</button>
+        </form>
         </div>
     )
 }
+
 export default Comment;
