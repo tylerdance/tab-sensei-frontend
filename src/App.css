@@ -2,14 +2,20 @@ body {
   background-color: #eee4d8;
 }
 
-.App {
-  /* background-color: ; */
-}
 
 .home_elements {
   display: flex;
  
   position: relative;
+}
+
+.aboutDiv {
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.welcome {
+  text-align: center;
 }
 
 .starShips {
@@ -24,19 +30,20 @@ body {
 }
 
 .tabResultName {
-  font-family: 'Amatic SC', cursive;
-  font-size: 27px;
+  /* font-family: 'Amatic SC', cursive; */
+  font-size: 20px;
+  /* text-decoration: none; */
+  /* font-family: 'Vollkorn', serif; */
+  /* font-family: 'Hind Siliguri', sans-serif; */
 }
 
-/* .songTitle {
-  font-family: 'Amatic SC', cursive;
-  font-size: 30px;
-} */
+
 
 #bpm {
   background-color: #ffffff;
   width:80px;
   display: inline-block;
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 .bpmUpDown {
@@ -77,13 +84,17 @@ body {
 #beatSpeed {
   font-size: 12px;
   font-weight: 900;
+  /* font-family: 'Hind Siliguri', sans-serif; */
 }
 
 .beat-title {
   color: rgb(0, 0, 0);
-  font-family: 'Amatic SC', cursive;
-  font-size: 23px;
-  font-weight: 500;
+  /* font-family: 'Amatic SC', cursive; */
+  font-size: 18px;
+  /* font-weight: 500; */
+  /* font-family: 'Vollkorn', serif; */
+  /* font-family: 'Lusitana', serif; */
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 .recTabs {
@@ -160,9 +171,15 @@ body {
 .each_rec_song {
   width:150px;
   height:180px;
-  text-decoration: none;
+  /* max-width: 170px; */
+  /* text-decoration: none; */
   margin: auto;
+  /* font-size: 8px; */
+  /* font-family: 'Lusitana', serif; */
+  /* font-family: 'Hind Siliguri', sans-serif; */
+  text-align: center;
 }
+
 
 p {
   font-size: 15px;
@@ -181,14 +198,49 @@ p {
 .song_title {
   color: blue;
   margin-bottom: 0px;
-  font-family: 'Amatic SC', cursive;
-  font-size: 25px;
+  text-align: center;
+  max-width: 140px;
+  font-size: 17px;
+  /* font-family: 'Amatic SC', cursive; */
+  /* font-size: 18px;  */
+  /* font-family: 'Vollkorn', serif; */
+  /* font-family: 'Hind Siliguri', sans-serif; */
+
 }
 
 .song_artist {
   color: black;
-  font-family: 'Amatic SC', cursive;
-  font-size: 20px;
+  /* font-family: 'Amatic SC', cursive; */
+  font-size: 17px;
+  max-width: 140px;
+  /* font-family: 'Vollkorn', serif;   */
+  text-decoration: none;
+  text-align: center;
+  /* width: 5px; */
+  /* text-align: center; */
+  /* font-family: 'Hind Siliguri', sans-serif; */
+}
+
+.tabResultName {
+  /* width: 350px; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 80%; 
+  font-size: 17px;
+  /* font-family: 'Vollkorn', serif; */
+  /* font-family: 'Lusitana', serif; */
+  /* font-family: 'Hind Siliguri', sans-serif; */
+}
+
+.tabArtist {
+  font-family: 'Hind Siliguri', sans-serif;
+  /* font-size: 10px; */
+}
+
+.tabTitle {
+  font-family: 'Hind Siliguri', sans-serif;
+  /* font-size: 30px; */
 }
 
 #anime_girl{
@@ -200,8 +252,15 @@ p {
 
 #featured_tabs {
   text-align: center;
-  font-family: 'Amatic SC', cursive;
-  font-size: 50px;
+  /* font-family: 'Amatic SC', cursive; */
+  /* font-size: 40px; */
+  /* font-family: 'Lusitana', serif; */
+  font-family: 'Hind Siliguri', sans-serif;
+  color: #22222256;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 35px;
+  /* width: 5px; */
 }
 
 .speed {
@@ -293,7 +352,6 @@ p {
   display: flex;
   position: relative;
   font-size: 10px;
-  /* font-weight: 600; */
   margin-top: 0px;
   margin-left: 10px;
   /* margin-right: 10px; */
@@ -301,13 +359,15 @@ p {
 
 .targetAuthor{
   /* background-color: deeppink; */
-  font-weight: 900;
+  font-weight: 600;
   font-size: 15px;
   margin-top: 4px;
   padding-top: 8px;
   margin-left: 2px;
   margin-left: 8px;
-  font-family: 'Nanum Myeongjo', serif;
+  /* font-family: 'Nanum Myeongjo', serif; */
+  /* font-family: 'Lusitana', serif; */
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
 .commentContent {
@@ -325,7 +385,9 @@ p {
 .targetContent {
   margin-top: 12px;
   margin-left: 10px;
-  font-family: 'Nanum Myeongjo', serif;
+  /* font-family: 'Nanum Myeongjo', serif; */
+  /* font-family: 'Lusitana', serif; */
+  font-family: 'Hind Siliguri', sans-serif;
   /* margin-bottom: 0px; */
   /* margin: 5px; */
 }
@@ -404,7 +466,7 @@ p {
   border: none;
 }
 
- .submitPhoto {
+.submitPhoto {
   font-size: 8px;
   height: 17px;
   width:40px;
@@ -449,17 +511,11 @@ p {
   color: rgb(39, 208, 197)
 }
 
-.commentFont {
+/* .commentFont {
   font-size: 10px;
-}
+} */
 
-.tabResultName {
-  width: 350px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  flex: 80%; 
-}
+
 
 .tabLink {
   display: flex;

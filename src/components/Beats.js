@@ -97,7 +97,7 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span className="beat-title"> BEAT 1 </span>
+      <span className="beat-title"> Beat 1 </span>
       <button className="bpmUpDown" onClick={changePace1minus}>-</button>
       <p id="bpm">{Math.round(pace1*120)} BPM</p>
       <button className="bpmUpDown" onClick={changePace1plus}>+</button>
@@ -120,7 +120,7 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span className="beat-title"> BEAT 2 </span>
+      <span className="beat-title"> Beat 2 </span>
       <button className="bpmUpDown" onClick={changePace2minus}>-</button>
       <p id="bpm">{Math.round(pace2*120)} BPM</p>
       <button className="bpmUpDown" onClick={changePace2plus}>+</button>
@@ -143,7 +143,7 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span className="beat-title"> BEAT 3 </span>
+      <span className="beat-title"> Beat 3 </span>
       <button className="bpmUpDown" onClick={changePace3minus}>-</button>
       <p id="bpm">{Math.round(pace3*120)} BPM</p>
       <button className="bpmUpDown" onClick={changePace3plus}>+</button>
@@ -166,7 +166,7 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span className="beat-title"> BEAT 4 </span>
+      <span className="beat-title"> Beat 4 </span>
       <button className="bpmUpDown" onClick={changePace4minus}>-</button>
       <p id="bpm">{Math.round(pace4*120)} BPM</p>
       <button className="bpmUpDown" onClick={changePace4plus}>+</button>
@@ -189,7 +189,7 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span className="beat-title"> BEAT 5 </span>
+      <span className="beat-title"> Beat 5 </span>
       <button className="bpmUpDown" onClick={changePace5minus}>-</button>
       <p id="bpm">{Math.round(pace5*120)} BPM</p>
       <button className="bpmUpDown" onClick={changePace5plus}>+</button>
@@ -212,7 +212,7 @@ function changePace6minus(e){
       <div className="speedDaddy">
       <div className="speed">
     
-      <span className="beat-title"> BEAT 6 </span>
+      <span className="beat-title"> Beat 6 </span>
       <button className="bpmUpDown" onClick={changePace6minus}>-</button>
       <p id="bpm">{Math.round(pace6*120)} BPM</p>
       <button className="bpmUpDown" onClick={changePace6plus}>+</button>
