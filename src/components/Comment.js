@@ -10,7 +10,7 @@ function Comment (props){
 
 
     async function saveComment(){
-    if(props.email===null){
+    if(props.email === null){
         // console.log("Please Log In To Save Tabs")
         alert('Must Be Logged In to Comment')
     }
@@ -25,8 +25,8 @@ function Comment (props){
             time: Date.now(), 
         }
         // prevents saving empty comment
-        if(commentsStore===""){
-             return
+        if(commentsStore === "") {
+            return
         }
 
         await Axios.post(`${REACT_APP_SERVER_URL}/api/users/tabs/comments`, userData)
@@ -41,7 +41,7 @@ function Comment (props){
     }
 
     async function getComments  () {
-        // console.log('GET COMMMMMMENTS')
+        console.log('GET COMMMMMMENTS')
         let url = await `${REACT_APP_SERVER_URL}/api/users/tabs/${props.songId}`
         // console.log(`${REACT_APP_SERVER_URL}/api/users/tabs/${props.songId}`)
          await Axios.get(url).then( 
@@ -50,11 +50,11 @@ function Comment (props){
                     // console.log('Look below')
                     // console.log(res.data)
                     // console.log(url)
-                     await setComments(res.data.user) 
+                    await setComments(res.data.user) 
             }else{
                 const placaHolder = [{content : "leave comment"}]
                 await setComments(placaHolder) 
-                // console.log("33333" + placaHolder)
+                console.log("33333" + placaHolder)
             }
         }).catch(err=>{console.log(err)})     
     }
@@ -62,11 +62,15 @@ function Comment (props){
         getComments()
     },[])
 
+    useEffect(()=>{  
+        getComments()
+    },[props.myTabs])
+
 // function leaveComment () {
     async function deleteComment(e){
       e.preventDefault()
     //   console.log(e.target.value)
-        const userData= {
+        const userData = {
             _id: e.target.value,
             email: props.email
         }
@@ -75,7 +79,9 @@ function Comment (props){
         //   console.log(res); 
         getComments()})
         .catch(err=>{console.log(err)})
+
     }  
+
 
     let commentBox = <div>
     </div>
@@ -104,43 +110,15 @@ let commentOrder;
                     </div>
                 }
             })
-            async function getImages(arr) {
-                for(let i = 0; i < arr.length; i++) {
-                    await Axios.get(`${REACT_APP_SERVER_URL}/api/users/myphoto/${i.email}`)
-                    .then(res=>{
-                        arr[i].image = 'http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866972/anime_girl3_pws5li.png'
-                        console.log(arr[i]);
-                        // console.log(res.data)
-                        // commentArrayAll[count - 1].image = 'http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866972/anime_girl3_pws5li.png'
-                        // console.log(commentArrayAll[count - 1]);
-                        // img = 'http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866972/anime_girl3_pws5li.png'
-                        // img = res.data.user[0].image_url
-                    })
-                    .catch(err=>{
-                        // console.log(err)
-                    })
-                }
-                return arr
-            }
 
             function sortByDate(arr) {
-                function starships(array) {
-                    array.sort(function(a,b){
+
+                    arr.sort(function(a,b){
                         return a.date - b.date;
                     });
-                    // console.log(arr)
-                    // getImages(arr)
-                    return array;
+
+                    return arr;
                 }
-                arr.sort(function(a,b){
-                    return a.date - b.date;
-                });
-                // console.log(arr)
-                // starships()
-                getImages(starships(arr))
-                return arr;
-            }
-            
 
             commentOrder = sortByDate(commentArrayAll).map((a, index) => {
                 const iddd=`comment${index}`

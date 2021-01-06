@@ -5,7 +5,8 @@ import Axios from 'axios';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function ShowMyTabs(props){
-    const[deleteTab, setDeleteTab] = useState('')
+    // const[deleteTab, setDeleteTab] = useState('')
+    const [tabsToggle, setTabsToggle] = useState(true)
     async function handleClick (e){
         e.preventDefault()
         const userData={
@@ -18,10 +19,13 @@ function ShowMyTabs(props){
             // console.log(res);
         props.toggle(true)
         props.toggle(false)
+        setTabsToggle(false)
+        setTabsToggle(true)
+
         }).catch(err=>{
             // console.log(err)
         })
-        setDeleteTab(e.target.value)
+        // setDeleteTab(e.target.value)
         // setDeleteTab(e.target.value)
     }
 
@@ -36,7 +40,7 @@ function ShowMyTabs(props){
             </div>
                 <button type="button" value={p._id} onClick={handleClick} className="deleteTabButton">delete tab</button>
             </div>
-            <Comment songId={p.songsterr_id} email={props.email} />
+            <Comment songId={p.songsterr_id} email={props.email} myTabs={props.mytabs} />
         </div>
     })
     return(
