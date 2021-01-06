@@ -19,8 +19,8 @@ function ShowMyTabs(props){
             // console.log(res);
         props.toggle(true)
         props.toggle(false)
-        setTabsToggle(false)
-        setTabsToggle(true)
+        // setTabsToggle(false)
+        // setTabsToggle(true)
 
         }).catch(err=>{
             // console.log(err)

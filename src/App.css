@@ -20,6 +20,7 @@ body {
   text-align: center;
   margin: 10px 0px 10px 0px;
   border-top: solid 2px rgba(169, 169, 169, 0.63);
+  width: 460px;
 }
 
 .tabResultName {
@@ -286,29 +287,34 @@ p {
 .commentAuthor {
   text-align: left;
   /* background-color: rgb(255, 0, 247); */
-  margin: auto;
+  /* margin: auto; */
   /* margin-top: 2px; */
-  width: 130px;
+  width: 140px;
   display: flex;
   position: relative;
   font-size: 10px;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin-top: 0px;
-
+  margin-left: 10px;
+  /* margin-right: 10px; */
 }
 
 .targetAuthor{
+  /* background-color: deeppink; */
+  font-weight: 900;
+  font-size: 15px;
   margin-top: 4px;
   padding-top: 8px;
   margin-left: 2px;
+  margin-left: 8px;
   font-family: 'Nanum Myeongjo', serif;
-  /* font-weight: 1000; */
 }
 
 .commentContent {
   /* background-color: chocolate; */
-  margin: auto;
-  font-size: 1px;
+  /* margin: auto; */
+  /* font-size: 1px; */
+  padding-right: 20 px;
   width: 200px;
   display: flex;
   position: relative;
@@ -329,6 +335,8 @@ p {
   display: flex;
   position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.235);
+  /* width: 500px; */
+  /* margin-left: ; */
   /* margin-top: 0px; */
 }
 
@@ -413,6 +421,10 @@ p {
   margin-left: 5px;
   border-radius: 15px;
   flex: 20%;
+}
+.saveButton:hover {
+  cursor: pointer;
+  color: rgb(39, 208, 197);
 }
 
 .deleteTabButton {
