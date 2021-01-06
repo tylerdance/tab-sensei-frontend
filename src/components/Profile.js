@@ -32,7 +32,7 @@ const Profile = (props) => {
             <div className="tabScroll">
                 <div className="tabScroll1">
                 <h2 id="header">タブの先生</h2>
-                <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866376/anime_girl_cropp_lvkjc3.png" id="anime_girl" alt="anime guitar girl"/> 
+                <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609890006/anime-girl-crop3_jueaic.png" id="anime_girl" alt="anime guitar girl"/> 
                 </div>
                 <div className="tabScroll2">
               

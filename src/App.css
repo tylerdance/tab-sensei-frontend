@@ -1,5 +1,5 @@
 body {
-  background-color: #d3dadf;
+  background-color: #eee4d8;
 }
 
 .App {
@@ -45,8 +45,8 @@ body {
 
 .bpmUpDown:hover {
   cursor: pointer;
-  color: rgb(145, 235, 205);
-  background-color: darksalmon;
+  color: rgb(95, 200, 218);
+  background-color: rgb(100, 88, 237);
 }
 
 #beatBank {
@@ -64,7 +64,7 @@ body {
 
 .beat {
   margin: 8px;
-  background-color: #c2c1c1;
+  background-color: #c0cdcd;
   border-radius: 10px;
   position: relative;
 }
@@ -194,7 +194,7 @@ p {
   width: 250px;
   height: 300px;
   object-fit: cover;
-  opacity: 80%;
+  opacity: 70%;
 }
 
 #featured_tabs {
@@ -264,7 +264,7 @@ p {
 }
 
 .commentDisplay{
-  background-color: #c2c1c1;
+  background-color: #c0cdcd;
   width: 80%;
   margin: auto;
   border-radius: 10px;
@@ -301,6 +301,8 @@ p {
   margin-top: 4px;
   padding-top: 8px;
   margin-left: 2px;
+  font-family: 'Nanum Myeongjo', serif;
+  /* font-weight: 1000; */
 }
 
 .commentContent {
@@ -317,6 +319,7 @@ p {
 .targetContent {
   margin-top: 12px;
   margin-left: 10px;
+  font-family: 'Nanum Myeongjo', serif;
   /* margin-bottom: 0px; */
   /* margin: 5px; */
 }
@@ -375,8 +378,6 @@ p {
   color: red;
 }
 
-
-
 .trashButton1 {
   border: none;
   font-size: 10px;
@@ -386,29 +387,31 @@ p {
 }
 .chooseFile {
   font-size: 8px;
-  height: 20px;
-  width:40px;
+  /* height: 8px; */
+  width: 40px;
   color: rgba(0, 0, 0, 0);
   margin-right: 30px; 
   margin-top: 15px;
   /* border-radius: 20px; */
+  border: none;
 }
 
  .submitPhoto {
   font-size: 8px;
-  height: 20px;
+  height: 17px;
   width:40px;
   color: rgba(0, 0, 0, 1);
-  margin-right: 30px; 
+  margin-right: 10px; 
   margin-top: 15px;
-  /* border-radius: 20px; */
+  border-radius: 2px;
+  border: none;
 }
 
 .saveButton {
   border: none;
   font-size: 10px;
   margin-left: 5px;
-  border-radius: 5px;
+  border-radius: 15px;
   flex: 20%;
 }
 
