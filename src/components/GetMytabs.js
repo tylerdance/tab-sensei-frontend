@@ -30,7 +30,7 @@ class GetMytabs extends Component{
     // console.log("line 14 " + this.props.email)
     await Axios.get(`${REACT_APP_SERVER_URL}/api/users/mytabs/${this.props.email}`)
     .then(res=>{
-        console.log('tabs updated');
+        // console.log('tabs updated');
         this.setState({ mytabs: res.data.user[0].song_list})})
     .catch(err=>{
         // console.log(err)

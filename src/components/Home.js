@@ -20,6 +20,7 @@ class Home extends Component {
             {/* <h2 id="featured_tabs">Featured Tabs</h2> */}
             <div id="heading">
             <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866376/anime_girl_cropp_lvkjc3.png" id="anime_girl" alt="anime guitar girl"/> 
+            {/* <img src="../images/anime-girl-crop3.png" id="anime_girl" alt="anime guitar girl"/>  */}
             <div className='recTabs'>
         
                     <RecTabs />
