@@ -8,7 +8,7 @@ class Image extends Component {
             imageUrl: null,
             imageAlt: null,
             redirect: false,
-         }
+        }
     }
 
     handleImageUpload = () => {
@@ -39,34 +39,30 @@ class Image extends Component {
               console.log(link)
               await Axios.post(`${REACT_APP_SERVER_URL}/api/users/profile/setup/image`, userData)
               .then( res=>{ console.log(res);
-               this.props.pic(true)
-               this.props.pic(false)
+              this.props.pic(true)
+              this.props.pic(false)
             
             })
               .catch(err=>{console.log(err)})
             })
           
   }
-  
-
 
     render() { 
         const { imageUrl, imageAlt } = this.state;
-
-        
-
         return ( 
             <div>
                 <section className="left-side">
                     <form>
-                        <div >
-                        <input className="chooseFile"  type="file"/>
-                        </div>
+                      <div className="choosePicForm">
                         <div>
-                          <button type="button"  className="submitPhoto" onClick={this.handleImageUpload}
-                         
-                          >Submit</button>
+                          <input className="chooseFile"  type="file"/>
                         </div>
+
+                        <div>
+                          <button type="button" className="submitPhoto" onClick={this.handleImageUpload}>Submit</button>
+                        </div>
+                      </div>
                     </form>
                 </section>
                 <section className="right-side">
@@ -75,7 +71,7 @@ class Image extends Component {
                     )}
                 </section>
             </div>
-         );
+        );
     }
 }
  

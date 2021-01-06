@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
-
-import Tabs from './Tabs'
 import BeatBank from './BeatBank'
 import RecTabs from './RecTabs'
-import { useParams } from 'react-router-dom';
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = { 
                email: this.props.email
-         }
-         console.log("my home one" + this.state.email)
+        }
+        // console.log("my home one" + this.state.email)
     }
-//     async componentDidMount() {
-//          await this.setState({email: this.props.email})
-//         console.log( 'home2 ' + this.state.email )
-
-// }
-
 
     render() { 
         return ( 
@@ -26,19 +17,15 @@ class Home extends Component {
             <div >
             <h2 id="header">タブの先生</h2>
         
-            <h2 id="featured_tabs">Featured Tabs</h2>
+            {/* <h2 id="featured_tabs">Featured Tabs</h2> */}
             <div id="heading">
-            <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609209287/anime_girl3_ilzqfv.png" id="anime_girl" alt="anime guitar girl"/> 
+            <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609866376/anime_girl_cropp_lvkjc3.png" id="anime_girl" alt="anime guitar girl"/> 
             <div className='recTabs'>
         
                     <RecTabs />
                 </div>
                 </div>
             <div className='home_elements'>
-            
-                {/* <div className='tabs'>
-                    <Tabs email={this.props.email}/>
-                </div> */}
                 <div className='beatBank'>
                     <BeatBank />
                 </div>
@@ -50,4 +37,3 @@ class Home extends Component {
 }
  
 export default Home;
-                

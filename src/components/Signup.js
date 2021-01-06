@@ -18,7 +18,6 @@ const Signup = () => {
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
-        
     }
 
     const handlePassword = (e) => {
@@ -27,7 +26,6 @@ const Signup = () => {
 
     const handleConfirmPassword = (e) => {
         setConfirmPassword(e.target.value);
-
     }
 
     const handleSubmit = async (e) => {
@@ -36,7 +34,7 @@ const Signup = () => {
             const newUser = { name, email, password, image };
             await axios.post(`${REACT_APP_SERVER_URL}/api/users/register`, newUser)
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 setRedirect(true);
             })
             .catch(error => {
