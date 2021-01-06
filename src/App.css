@@ -195,7 +195,7 @@ p {
   width: 250px;
   height: 300px;
   object-fit: cover;
-  opacity: 70%;
+  /* opacity: 70%; */
 }
 
 #featured_tabs {
