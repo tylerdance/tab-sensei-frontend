@@ -4,13 +4,6 @@ class RecTabs extends Component {
     render() { 
         const bestSongsInTheWorld = [
             {
-                title: 'Life is a Highway',
-                artist: 'Rascall Flatts',
-                url: 'https://www.songsterr.com/a/wsa/rascal-flatts-life-is-a-highway-tab-s78918t2',
-                id: '78918',
-                image: 'https://www.etonline.com/sites/default/files/images/2020-01/gettyimages-170002171.jpg'
-            },
-            {
                 title: 'Skinny Love',
                 artist: 'Bon Iver',
                 url: 'https://www.songsterr.com/a/wsa/bon-iver-skinny-love-tab-s32167t0',
@@ -46,81 +39,11 @@ class RecTabs extends Component {
                 image: 'https://www.stereoboard.com/images/artistimages/switchfoot.jpg',
             },
             {
-                title: 'Turmoil and Tinfoil',
-                artist: 'Billy Strings',
-                url: 'https://www.songsterr.com/a/wsa/billy-strings-turmoil-and-tinfoil-tab-s473758t0',
-                id: '473758',
-                image: 'https://www.pollstar.com/Image/Photos/2020/01/adc6def3-6d31-44d0-aa7e-b366f925e374-boi.jpg',
-            },
-            {
-                title: 'Free Bird',
-                artist: 'Lynyrd Skynyrd',
-                url: 'https://www.songsterr.com/a/wsa/lynyrd-skynyrd-free-bird-tab-s21t3',
-                id: '21',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Lynyrd_Skynyrd_band_%281973%29.jpg',
-            },
-            {
                 title: 'Sweet Child O\' Mine',
                 artist: 'Guns N\' Roses',
                 url: 'https://www.songsterr.com/a/wsa/guns-n-roses-sweet-child-o-mine-tab-s23t2',
                 id: '23',
                 image: 'https://guitar.com/wp-content/uploads/2020/07/slash-guns-n-roses@1400x1050.jpg',
-            },
-            {
-                title: 'Voodoo Child',
-                artist: 'Jimi Hendrix',
-                url: 'https://www.songsterr.com/a/wsa/jimi-hendrix-voodoo-child-tab-s39275t0',
-                id: '39275',
-                image: 'https://media1.popsugar-assets.com/files/thumbor/9qbDJGxepr8vZC2nF3fEEBI5mAU/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/02/19/985/n/1922283/5a0da2df5c6c8568d92aa0.02986671_/i/Jimi-Hendrix-Impact-Music-Industry.jpg',
-            },
-            {
-                title: 'American Idiot',
-                artist: 'Green Day',
-                url: 'https://www.songsterr.com/a/wsa/green-day-american-idiot-tab-s214t3',
-                id: '214',
-                image: 'https://i.guim.co.uk/img/media/55760e085efd29851aaa9039781334c63e478c85/0_300_4500_2700/master/4500.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=e4900fb962c83b5e2f0c1f904985a55c',
-            },
-            {
-                title: 'In Too Deep',
-                artist: 'Sum 41',
-                url: 'https://www.songsterr.com/a/wsa/sum-41-in-too-deep-tab-s90377t3',
-                id: '90377',
-                image: 'https://i.scdn.co/image/3ad9fb703dffe649bec3ec92abccbb280276316b',
-            },
-            {
-                title: 'Jammin',
-                artist: 'Bob Marley',
-                url: 'https://www.songsterr.com/a/wsa/bob-marley-jammin-tab-s12709t0',
-                id: '12709',
-                image: 'https://images.theconversation.com/files/144359/original/image-20161103-25349-1jdv0b3.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop',
-            },
-            {
-                title: 'Sweet Home Alabama',
-                artist: 'Lynyrd Skynyrd',
-                url: 'https://www.songsterr.com/a/wsa/lynyrd-skynyrd-sweet-home-alabama-tab-s58984t0',
-                id: '58984',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Lynyrd_Skynyrd_band_%281973%29.jpg',
-            },
-            {
-                title: 'Hotel California',
-                artist: 'The Eagles',
-                url: 'https://www.songsterr.com/a/wsa/the-eagles-hotel-california-tab-s447t5',
-                id: '447',
-                image: 'https://cdn.britannica.com/50/198850-050-46C563B5/Eagles-Bernie-Leadon-Don-Henley-Glenn-Frey.jpg',
-            },
-            {
-                title: 'Back In Black',
-                artist: 'AC/DC',
-                url: 'https://www.songsterr.com/a/wsa/ac-dc-back-in-black-tab-s1024t2',
-                id: '1024',
-                image: 'https://www.rollingstone.com/wp-content/uploads/2020/07/acdc-essential-songs.jpg',
-            },
-            {
-                title: 'Killing In The Name Of',
-                artist: 'Rage Against The Machine',
-                url: 'https://www.songsterr.com/a/wsa/rage-against-the-machine-killing-in-the-name-of-tab-s393865t1',
-                id: '393865',
-                image: 'https://cloudfront-us-east-1.images.arcpublishing.com/advancelocal/F2Q4Y6BBUREITOQI2F4BBNUUFU.jpg',
             },
             {
                 title: 'Jessica',
@@ -193,20 +116,6 @@ class RecTabs extends Component {
                 image: 'https://downbeat.com/images/news/_full/GG_SRV_credit_%C2%A9PaulNatkin.jpg',
             },
             {
-                title: 'Rock You Like A Hurricane',
-                artist: 'Scorpions',
-                url: 'https://www.songsterr.com/a/wsa/scorpions-rock-you-like-a-hurricane-tab-s337t2',
-                id: '337',
-                image: 'https://images.discovery-prod.axs.com/2017/08/scorpions_08-21-17_7_599b30e5558d3.jpg',
-            },
-            {
-                title: 'Boulevard Of Broken Dreams',
-                artist: 'Green Day',
-                url: 'https://www.songsterr.com/a/wsa/green-day-boulevard-of-broken-dreams-tab-s92866t3',
-                id: '92866',
-                image: 'https://i.guim.co.uk/img/media/55760e085efd29851aaa9039781334c63e478c85/0_300_4500_2700/master/4500.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=e4900fb962c83b5e2f0c1f904985a55c',
-            },
-            {
                 title: 'Another Brick In The Wall',
                 artist: 'Pink Floyd',
                 url: 'https://www.songsterr.com/a/wsa/pink-floyd-another-brick-in-the-wall-tab-s303t4',
@@ -219,13 +128,6 @@ class RecTabs extends Component {
                 url: 'https://www.songsterr.com/a/wsa/pink-floyd-comfortably-numb-tab-s271t2',
                 id: '271',
                 image: 'https://upload.wikimedia.org/wikipedia/en/d/d6/Pink_Floyd_-_all_members.jpg',
-            },
-            {
-                title: 'Watch It Fall',
-                artist: 'Billy Strings',
-                url: 'https://www.songsterr.com/a/wsa/billy-strings-watch-it-fall-tab-s476793t0',
-                id: '476793',
-                image: 'https://www.pollstar.com/Image/Photos/2020/01/adc6def3-6d31-44d0-aa7e-b366f925e374-boi.jpg',
             },
 ]
 

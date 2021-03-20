@@ -28,7 +28,7 @@ function TabResults(props) {
             }
             await Axios.get(`${REACT_APP_SERVER_URL}/api/users/songlist/${props.email}`)
             .then(res=>{
-                if(res.data.response[0].song_list.length!==0){
+                if(res.data.response[0].song_list.length !==0){
                     // console.log('duplicate?')
                     // console.log(res.data.response[0].song_list)
                     const tabs = res.data.response[0].song_list
@@ -36,7 +36,7 @@ function TabResults(props) {
                     const unique= tabs.map((p, index)=>{
                         // console.log(p.songsterr_id)
                         // console.log(e.target.value)
-                        if(parseInt(p.songsterr_id)===parseInt(e.target.value)){
+                        if(parseInt(p.songsterr_id) === parseInt(e.target.value)){
                             counter=true;  
                         }else{
                         }
@@ -72,15 +72,15 @@ function TabResults(props) {
         }
 
         return <div className="starShips" key={p.id}>
-        <div className="tabLink">
-            <a href={link} target="_blank" rel="noreferrer" className=""> 
-            <div class="tabResultName">
-                <span className="tabTitle">{p.title}</span>
-                <span className="tabArtist"> - {p.artist.name}</span> 
-            </div> 
-            </a>
-            <button className='saveButton' type="button" value={p.id} onClick={handleClick}>Save</button >
-        </div>
+            <div className="tabLink">
+                <a href={link} target="_blank" rel="noreferrer" className=""> 
+                    <div class="tabResultName">
+                        <span className="tabTitle">{p.title}</span>
+                        <span className="tabArtist"> - {p.artist.name}</span> 
+                    </div> 
+                </a>
+                <button className='saveButton' type="button" value={p.id} onClick={handleClick}>Save</button >
+            </div>
             <Comment songId={p.id} email={props.email}/>
         </div>
     })
