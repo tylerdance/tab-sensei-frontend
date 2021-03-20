@@ -1,17 +1,10 @@
 body {
-  background-color: #eee4d8;
+  background-color: #fffcf8;
 }
-
 
 .home_elements {
   display: flex;
- 
   position: relative;
-}
-
-.aboutDiv {
-  /* display: flex;
-  justify-content: space-between; */
 }
 
 .aboutDiv2 {
@@ -24,7 +17,14 @@ body {
   font-family: 'Hind Siliguri', sans-serif;
   font-weight: 600;
   color: #1d1d1d95;
-  /* font-size: 40px; */
+}
+
+.about {
+  font-family: 'Hind Siliguri', sans-serif;
+  flex:50%;
+  height: 350px;
+  /* overflow-y: scroll; */
+  margin-left: 50px;
 }
 
 .homeText {
@@ -36,10 +36,6 @@ body {
 }
 
 .starShips {
-  /* background-color: rgba(53, 68, 53, 0.185);
-  border: solid black 1px; */
-  /* border-radius: 10px; */
-  
   text-align: center;
   margin: 10px 0px 10px 0px;
   border-top: solid 2px rgba(169, 169, 169, 0.63);
@@ -47,14 +43,8 @@ body {
 }
 
 .tabResultName {
-  /* font-family: 'Amatic SC', cursive; */
   font-size: 20px;
-  /* text-decoration: none; */
-  /* font-family: 'Vollkorn', serif; */
-  /* font-family: 'Hind Siliguri', sans-serif; */
 }
-
-
 
 #bpm {
   background-color: #ffffff;
@@ -65,7 +55,6 @@ body {
 
 .bpmUpDown {
   border-radius: 20px;
-  /* height: 28px; */
 }
 
 .bpmUpDown:hover {
@@ -75,15 +64,11 @@ body {
 }
 
 #beatBank {
-  /* border: solid black 1px; */
   text-align:center;
-  /* background-color: goldenrod; */
   border-radius: 10px;
   margin-left: 80px;
   margin-top: 20px;
   margin-bottom: 20px;
-  /* flex: 10%; */
-
   width: 280px;
 }
 
@@ -101,44 +86,32 @@ body {
 #beatSpeed {
   font-size: 12px;
   font-weight: 900;
-  /* font-family: 'Hind Siliguri', sans-serif; */
 }
 
 .beat-title {
   color: rgb(0, 0, 0);
-  /* font-family: 'Amatic SC', cursive; */
   font-size: 18px;
-  /* font-weight: 500; */
-  /* font-family: 'Vollkorn', serif; */
-  /* font-family: 'Lusitana', serif; */
   font-family: 'Hind Siliguri', sans-serif;
 }
 
 .recTabs {
   width: 100%;
-  /* border: solid black 1px; */
   text-align:center;
-  /* background-color: goldenrod; */
   border-radius: 10px;
-  /* margin: auto; */
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
- 
 }
 
 #heading {
   display: flex;
- 
 }
 
 .tabs {
   text-align: center;
   flex: 80%;
- 
   margin-top: 20px;
   border-radius: 10px;
- 
 }
 
 .bigApp{
@@ -156,28 +129,14 @@ body {
 }
 
 .searchTabs {
-  /* background-color: aqua; */
   width: 550px;
   margin-left: 30%;
   margin-top: 1%;
-  /* margin: auto; */
 }
-
-/* .searchDiv {
-  position: relative;
-} */
-
-/* #nestedSearch {
-  margin-left: 70px;
-  margin-top: 5px; 
-  position: relative;
-} */
 
 #header {
   font-size: 40px;
-  /* background-color: darkblue; */
   color:rgba(167, 164, 164, 0.808);
-  /* border: solid black 1px; */
   border-radius: 10px;
 }
 
@@ -188,15 +147,9 @@ body {
 .each_rec_song {
   width:150px;
   height:180px;
-  /* max-width: 170px; */
-  /* text-decoration: none; */
   margin: auto;
-  /* font-size: 8px; */
-  /* font-family: 'Lusitana', serif; */
-  /* font-family: 'Hind Siliguri', sans-serif; */
   text-align: center;
 }
-
 
 p {
   font-size: 15px;
@@ -218,72 +171,49 @@ p {
   text-align: center;
   max-width: 140px;
   font-size: 17px;
-  /* font-family: 'Amatic SC', cursive; */
-  /* font-size: 18px;  */
-  /* font-family: 'Vollkorn', serif; */
-  /* font-family: 'Hind Siliguri', sans-serif; */
-
 }
 
 .song_artist {
   color: black;
-  /* font-family: 'Amatic SC', cursive; */
   font-size: 17px;
   max-width: 140px;
-  /* font-family: 'Vollkorn', serif;   */
   text-decoration: none;
   text-align: center;
-  /* width: 5px; */
-  /* text-align: center; */
-  /* font-family: 'Hind Siliguri', sans-serif; */
 }
 
 .tabResultName {
-  /* width: 350px; */
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   flex: 80%; 
   font-size: 17px;
-  /* font-family: 'Vollkorn', serif; */
-  /* font-family: 'Lusitana', serif; */
-  /* font-family: 'Hind Siliguri', sans-serif; */
 }
 
 .tabArtist {
   font-family: 'Hind Siliguri', sans-serif;
-  /* font-size: 10px; */
 }
 
 .tabTitle {
   font-family: 'Hind Siliguri', sans-serif;
-  /* font-size: 30px; */
 }
 
 #anime_girl{
   width: 250px;
   height: 300px;
   object-fit: cover;
-  /* opacity: 70%; */
 }
 
 #featured_tabs {
   text-align: center;
-  /* font-family: 'Amatic SC', cursive; */
-  /* font-size: 40px; */
-  /* font-family: 'Lusitana', serif; */
   font-family: 'Hind Siliguri', sans-serif;
   color: #22222256;
   font-weight: 600;
   letter-spacing: 2px;
   font-size: 35px;
-  /* width: 5px; */
 }
 
 .speed {
- /* background-color: blueviolet; */
  margin: auto;
-
 }
 
 .speed_bar {
@@ -336,8 +266,6 @@ p {
   border-radius: 5px;
   border: none;
   margin-left: 10px;
-  /* visibility: hidden; */
-
 }
 
 .commentDisplay{
@@ -362,35 +290,25 @@ p {
 
 .commentAuthor {
   text-align: left;
-  /* background-color: rgb(255, 0, 247); */
-  /* margin: auto; */
-  /* margin-top: 2px; */
   width: 140px;
   display: flex;
   position: relative;
   font-size: 10px;
   margin-top: 0px;
   margin-left: 10px;
-  /* margin-right: 10px; */
 }
 
 .targetAuthor{
-  /* background-color: deeppink; */
   font-weight: 600;
   font-size: 15px;
   margin-top: 4px;
   padding-top: 8px;
   margin-left: 2px;
   margin-left: 8px;
-  /* font-family: 'Nanum Myeongjo', serif; */
-  /* font-family: 'Lusitana', serif; */
   font-family: 'Hind Siliguri', sans-serif;
 }
 
 .commentContent {
-  /* background-color: chocolate; */
-  /* margin: auto; */
-  /* font-size: 1px; */
   padding-right: 20 px;
   width: 200px;
   display: flex;
@@ -402,45 +320,28 @@ p {
 .targetContent {
   margin-top: 12px;
   margin-left: 10px;
-  /* font-family: 'Nanum Myeongjo', serif; */
-  /* font-family: 'Lusitana', serif; */
   font-family: 'Hind Siliguri', sans-serif;
-  /* margin-bottom: 0px; */
-  /* margin: 5px; */
 }
 
 .commentDiv {
-  /* background-color: chartreuse; */
   display: flex;
   position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.235);
-  /* width: 500px; */
-  /* margin-left: ; */
-  /* margin-top: 0px; */
 }
 
 .targetDelete {
   margin-top: 8px;
-  /* margin-left: 99%; */
   display: flex;
   justify-content: flex-end;
 }
 
 .authorPic {
-  /* margin-bottom: 0px;
-  margin-right: auto;
-  margin-left: auto; */
   width: 30px;
   height: 30px;
   object-fit: cover;
   border-radius: 100%;
   margin-top: 7px;
 }
-
-/* .nav_display{ */
-  /* display:inline; */
-  /* position:relative; */
-/* } */
 
 .nav-link {
   margin-top: 2px;
@@ -461,7 +362,6 @@ p {
 
 .trashButton:hover {
   cursor: pointer;
-  /* background-color: red; */
   color: red;
 }
 
@@ -474,12 +374,10 @@ p {
 }
 .chooseFile {
   font-size: 8px;
-  /* height: 8px; */
   width: 40px;
   color: rgba(0, 0, 0, 0);
   margin-right: 30px; 
   margin-top: 15px;
-  /* border-radius: 20px; */
   border: none;
 }
 
@@ -501,9 +399,6 @@ p {
   border-radius: 15px;
   flex: 20%;
   max-width: 60px;
-  /* display: flex; */
-  /* justify-content: flex-end; */
-  /* justify-content: flex-end; */
 }
 .saveButton:hover {
   cursor: pointer;
@@ -526,19 +421,12 @@ p {
 #inputComment {
   font-size: 10px;
   margin-bottom: 8px;
-  /* border-radius: 5px; */
 }
 
 #comment:hover {
   cursor: pointer;
   color: rgb(39, 208, 197)
 }
-
-/* .commentFont {
-  font-size: 10px;
-} */
-
-
 
 .tabLink {
   display: flex;

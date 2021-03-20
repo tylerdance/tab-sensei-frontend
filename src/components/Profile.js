@@ -29,20 +29,19 @@ const Profile = (props) => {
         <div>
             <div className="tabScroll4">
              
-            <div className="tabScroll">
-                <div className="tabScroll1">
-                <h2 id="header">タブの先生</h2>
-                <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609890006/anime-girl-crop3_jueaic.png" id="anime_girl" alt="anime guitar girl"/> 
+                <div className="tabScroll">
+                    <div className="tabScroll1">
+                        <h2 id="header">タブの先生</h2>
+                        <img src="http://res.cloudinary.com/dok4pz3i3/image/upload/v1609890006/anime-girl-crop3_jueaic.png" id="anime_girl" alt="anime guitar girl"/> 
+                    </div>
+                    <div className="tabScroll2">
+                        <GetMytabs email={props.user.email} newtab={newTab} toggle={setNewTab}/>
+                    </div>
+                    <div className="tabScroll3">
+                        <BeatBank />
+                    </div>
                 </div>
-                <div className="tabScroll2">
-              
-            <GetMytabs email={props.user.email} newtab={newTab} toggle={setNewTab}/>
-                </div>
-                <div className="tabScroll3">
-                    <BeatBank />
-                </div>
-                </div>
-                </div>
+            </div>
             <HomeClone email={props.user.email}  toggle={setNewTab} tabs={props.tabs} videos={props.videos} />
         </div>
     );

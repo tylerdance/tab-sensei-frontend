@@ -47,11 +47,13 @@ class Tabs extends Component {
             return(
                 <div className="bigApp">
                     <div id="youTube">
-                        {this.state.loading===true
-                        ?
-                        <h1>Loading</h1>
-                        :
-                        <div></div>}
+                        {
+                            this.state.loading===true
+                            ?
+                            <h1>Loading</h1>
+                            :
+                            <div></div>
+                        }
                         <Videos className="Videos" videos={this.props.videos} />
                     </div>
                     <div id="tabSearch ">
@@ -60,9 +62,9 @@ class Tabs extends Component {
                         </div>  
                     </div>
                     <div id="beatBankHome">
-                    <div id="beatBank">
-                        <BeatBank />
-                    </div>
+                        <div id="beatBank">
+                            <BeatBank />
+                        </div>
                     </div>
               </div>
             )

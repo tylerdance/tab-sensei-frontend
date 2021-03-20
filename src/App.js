@@ -21,12 +21,12 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 function App() {
-  // Set state values
   const [currentUser, setCurrentUser] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [tabs, setTabs] = useState([])
   const [videos, setVideos] = useState([])
   const [search, setSearch] = useState('')
+  
   useEffect(() => {
     let token;
     // if there is no token in localStorage, then the user is in authenticated
@@ -37,9 +37,7 @@ function App() {
       setAuthToken(localStorage.jwtToken);
       setCurrentUser(token);
     }
-  }, 
-  
-  []);
+  }, []);
 
   const nowCurrentUser = (userData) => {
     // console.log('nowCurentUser is here...');
@@ -62,11 +60,11 @@ function App() {
       <div className="container mt-5">
         <Switch>
           <Route path='/signup' component={ Signup } />
-          <Route exact path='/' component={ Home} />
+          <Route exact path='/' component={ Home } />
           <Route 
             path='/login' 
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
-          <Route path='/about' component={ About } />
+          {/* <Route path='/about' component={ About } /> */}
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} tabs={tabs} videos={videos}/>
           {/* <Route path="/results" component={ Tabs }   user={currentUser} tabs={tabs} videos={videos}/> */}
           <Route path="/results" render={()=>{

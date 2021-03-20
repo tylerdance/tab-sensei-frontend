@@ -13,15 +13,13 @@ class Home extends Component {
     render() { 
         return ( 
             <> 
-            <div >
-            {/* <h2 id="featured_tabs">Featured Tabs</h2> */}
-            <div id="heading">
-            <div className='recTabs'>
-        
-                <RecTabs />
-            </div>
-            </div>
-            </div>
+                <div >
+                    <div id="heading">
+                        <div className='recTabs'>
+                            <RecTabs />
+                        </div>
+                    </div>
+                </div>
             </>
         );
     }
