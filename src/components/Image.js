@@ -65,6 +65,7 @@ class Image extends Component {
             </div>
 
             <div id="image-uploader">
+              <div className="image-upload-div">
                 <section className="left-side">
                     <form>
                       <div className="choosePicForm">
@@ -83,7 +84,9 @@ class Image extends Component {
                     <img src={imageUrl} alt={imageAlt} className="displayed-image"/>
                     )}
                 </section>
-                <button onClick={this.handleHideImageUpload}>Cancel</button>
+                <button id="cancel-img-upload" onClick={this.handleHideImageUpload}>Cancel</button>
+
+              </div>
             </div>
           </div>
         );

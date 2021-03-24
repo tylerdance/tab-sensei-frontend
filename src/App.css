@@ -157,6 +157,33 @@ p {
 
 #image-uploader {
   display: none;
+
+}
+.image-upload-div {
+
+  display: flex;
+}
+
+#update-pic-btn {
+  font-size: 10px;
+  height: 17px;
+  width: 90px;
+  color: rgba(0, 0, 0, 1);
+  margin-right: 10px; 
+  margin-top: 15px;
+  border-radius: 2px;
+  border: none;
+}
+
+#cancel-img-upload {
+  font-size: 8px;
+  height: 17px;
+  width:40px;
+  color: rgba(0, 0, 0, 1);
+  margin-right: 10px; 
+  margin-top: 15px;
+  border-radius: 2px;
+  border: none;
 }
 
 .tab_image {
