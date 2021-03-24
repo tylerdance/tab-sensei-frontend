@@ -155,6 +155,10 @@ p {
   font-size: 15px;
 }
 
+#image-uploader {
+  display: none;
+}
+
 .tab_image {
   margin-bottom: 0px;
   margin-right: auto;

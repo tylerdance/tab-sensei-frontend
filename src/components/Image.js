@@ -11,52 +11,65 @@ class Image extends Component {
         }
     }
 
-    handleImageUpload = () => {
-      
-        const { files } = document.querySelector('input[type="file"]')
-        const formData = new FormData();
-        formData.append('file', files[0]);
-        // replace this with your upload preset name
-        formData.append('upload_preset', 'ml_default')
-        const options = {
-          method: 'POST',
-          body: formData,
-        };
+    handleShowImageUpload = () => {
+      document.getElementById('image-uploader').style.display="block"
+      document.getElementById('update-pic-btn').style.display="none"
+    }
 
-        return fetch('https://api.Cloudinary.com/v1_1/dok4pz3i3/image/upload', options)
-          .then(res => res.json())
-          .then(async(res) => {
-              const link = res.url;
-              if(!link){
-                alert('Must choose a file to upload!')
-                return
-              }
-              const userData ={
-                  email: this.props.email,
-                  image_url: link
-              }
-              console.log(this.props.email)
-              console.log(link)
-              await Axios.post(`${REACT_APP_SERVER_URL}/api/users/profile/setup/image`, userData)
-              .then( res=>{ console.log(res);
-              this.props.pic(true)
-              this.props.pic(false)
-            
-            })
-              .catch(err=>{console.log(err)})
-            })
-          
-  }
+    handleHideImageUpload = () => {
+      document.getElementById('image-uploader').style.display="none"
+      document.getElementById('update-pic-btn').style.display="block"
+    }
+
+    handleImageUpload = () => {
+      const { files } = document.querySelector('input[type="file"]')
+      const formData = new FormData();
+      formData.append('file', files[0]);
+      // replace this with your upload preset name
+      formData.append('upload_preset', 'ml_default')
+      const options = {
+        method: 'POST',
+        body: formData,
+      };
+
+      return fetch('https://api.Cloudinary.com/v1_1/dok4pz3i3/image/upload', options)
+        .then(res => res.json())
+        .then(async(res) => {
+          const link = res.url;
+          if(!link){
+            alert('Must choose a file to upload!')
+            return
+          }
+          const userData ={
+              email: this.props.email,
+              image_url: link
+          }
+          console.log(this.props.email)
+          console.log(link)
+          await Axios.post(`${REACT_APP_SERVER_URL}/api/users/profile/setup/image`, userData)
+          .then( res=>{ console.log(res);
+          this.props.pic(true)
+          this.props.pic(false)
+        
+        })
+          .catch(err=>{console.log(err)})
+        })    
+    }
 
     render() { 
         const { imageUrl, imageAlt } = this.state;
-        return ( 
-            <div>
+        return (
+          <div>
+            <div id="update-pic-btn">
+              <button onClick={this.handleShowImageUpload}>Update Pic</button>
+            </div>
+
+            <div id="image-uploader">
                 <section className="left-side">
                     <form>
                       <div className="choosePicForm">
                         <div>
-                          <input className="chooseFile"  type="file"/>
+                          <input className="chooseFile" type="file"/>
                         </div>
 
                         <div>
@@ -70,7 +83,9 @@ class Image extends Component {
                     <img src={imageUrl} alt={imageAlt} className="displayed-image"/>
                     )}
                 </section>
+                <button onClick={this.handleHideImageUpload}>Cancel</button>
             </div>
+          </div>
         );
     }
 }
