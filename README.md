@@ -1,7 +1,9 @@
 # Tab Sensei Front End
+
 ## Mission
 Tab Sensei is a search engine that finds guitar and bass TABS. The application allows users to comment on the tabs to promote interaction. We will automatically pull up youTube guitar tutorials based on the user's TAB inquiry. There is a built-in metronome as well to help you practice.
-## What is a TAB????
+
+## What is a tab?
 Guitar tablature, or guitar tabs, is a more straightforward way of reading and writing music specifically for guitars. If standard staff notation is the whole book, guitar tabs are like Cliff's Notes. You get all the musical information that you need specifically for the guitar.<br/>
 Even though its simple, guitar tablature is useful as a notation system. You can use it to indicate rhythm, technique, and many other aspects of playing guitar music. 
 ## [Click here for the gitHub Repo](https://github.com/tylerdance/tab-sensei-frontend)
