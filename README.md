@@ -1,39 +1,64 @@
 # Tab Sensei Front End
 
+
 ## Mission
 Tab Sensei is a search engine that finds guitar and bass TABS. The application allows users to comment on the tabs to promote interaction. We will automatically pull up youTube guitar tutorials based on the user's TAB inquiry. There is a built-in metronome as well to help you practice.
 
 ## What is a tab?
-Guitar tablature, or guitar tabs, is a more straightforward way of reading and writing music specifically for guitars. If standard staff notation is the whole book, guitar tabs are like Cliff's Notes. You get all the musical information that you need specifically for the guitar.<br/>
+Guitar tablature, or guitar tabs, is a way of reading and writing music specifically for people that do not know how to read music. You get all the musical information that you need specifically for the guitar.<br/>
 Even though its simple, guitar tablature is useful as a notation system. You can use it to indicate rhythm, technique, and many other aspects of playing guitar music. 
-## [Click here for the gitHub Repo](https://github.com/tylerdance/tab-sensei-frontend)
-```console
-npm i
-```
-to install all dependencies for the application to run
+
+</br>
+
+### [Live site](tabsensei.herokuapp.com/)
+
+</br>
+
+### Local installation
+
+`npm i`
+</br>
+to install all dependencies after cloning repo
+
 ## API keys and resources
 ### Songster
-Our application uses [songsterr](https://www.songsterr.com/) API as the main resource for the search engine.</br>
+Our application uses [songsterr](https://www.songsterr.com/) API as the main resource for the search engine.
+</br>
 [click here for more detailed API documentation](https://www.songsterr.com/a/wa/api)
-Example Request <br/>
-http://www.songsterr.com/a/ra/songs.json?pattern=Marley<br/> 
-Constructing URLs</br>
-You can construct URLs to a song or artist page once you know its id as returned by API calls above.</br>
+Example Request 
+<br/>
+http://www.songsterr.com/a/ra/songs.json?pattern=Marley
+<br/> 
+Constructing URLs
 </br>
-URL take the following format:</br>
+You can construct URLs to a song or artist page once you know its id as returned by API calls above.
 </br>
-http://www.songsterr.com/a/wa/song?id={id}</br>
-http://www.songsterr.com/a/wa/artist?id={id}</br>
+</br>
+URL take the following format:
+</br>
+</br>
+http://www.songsterr.com/a/wa/song?id={id}
+</br>
+http://www.songsterr.com/a/wa/artist?id={id}
+</br>
 ### youTube
-our modified API request<br/>
+our modified API request
+<br/>
 https://www.googleapis.com/youtube/v3/search?part=snippet&q=guitar+tutorial+{song name}&type=video&key={API KEY}<br/>
-original API request for video search on youTube<br/>
-https://www.googleapis.com/youtube/v3/search?part=snippet&q=swimming&type=video&key=API_KEY </br>
-[follow this link to obtain a youTube API key - this will require having a registered Google Developers account](https://developers.google.com/youtube/v3/getting-started) <br/>
+original API request for video search on youTube
+<br/>
+https://www.googleapis.com/youtube/v3/search?part=snippet&q=swimming&type=video&key=API_KEY
+</br>
+[follow this link to obtain a youTube API key - this will require having a registered Google Developers account](https://developers.google.com/youtube/v3/getting-started)
+<br/>
 ### Cloudinary
-Cloudinary is our third resourse.</br>
-[More information here](https://blog.logrocket.com/handling-images-with-cloudinary-in-react/)<br/>
-[requires having a registered account](https://cloudinary.com/)</br>
+Cloudinary is our third resourse.
+</br>
+[More information here](https://blog.logrocket.com/handling-images-with-cloudinary-in-react/)
+<br/>
+[requires having a registered account](https://cloudinary.com/)
+</br>
+
 ## ROUTES 
 Method | Path | Location| Purpose 
 ------ | ------ | ------ | ------
@@ -51,10 +76,13 @@ get | ${REACT_APP_SERVER_URL}/api/users/songlist/| TabResults.js| pull results f
 post | ${REACT_APP_SERVER_URL}/api/users/tabs/addsong  | TabResults.js  | saves tabs
 get  | ${REACT_APP_SERVER_URL}/api/request/:id | Tabs.js | rerenders tab search results
 get | ${REACT_APP_SERVER_URL}/api/request/youtube/ | Tabs.js  | rerenders youTute search results
+
 ## Components
 ![Chart](https://res.cloudinary.com/dok4pz3i3/image/upload/v1609957314/glue4dwrshsi9uwx8gk6.png)
+
 ## Design and Structure of the website
 ![Chart](https://res.cloudinary.com/dok4pz3i3/image/upload/v1609957436/rp1f0jjqfjrjlofeulbk.png)
+
 ## Code Blocks
 Returning comments in chronological order
 ```js
@@ -111,5 +139,3 @@ function changePace1minus(e){
         playbackRate={pace1} 
       />
 ```
-
-code review
