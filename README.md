@@ -1,8 +1,7 @@
-# Tab Sensei Front End
-
+# Tab Sensei
 
 ## Mission
-Tab Sensei is a search engine that finds guitar and bass TABS. The application allows users to comment on the tabs to promote interaction. We will automatically pull up youTube guitar tutorials based on the user's TAB inquiry. There is a built-in metronome as well to help you practice.
+Tab Sensei is a search engine that finds guitar tabs for your favorite songs. The application allows users to comment on the tabs to promote interaction. Tab Sensei will automatically pull up YouTube results based on the user's search and also provides a selection of beats that the user can adjust to whatever tempo they want to practice at.
 
 ## What is a tab?
 Guitar tablature, or guitar tabs, is a way of reading and writing music specifically for people that do not know how to read music. You get all the musical information that you need specifically for the guitar.<br/>
@@ -19,6 +18,9 @@ Even though its simple, guitar tablature is useful as a notation system. You can
 `npm i`
 </br>
 to install all dependencies after cloning repo
+
+## Beat Bank
+All beats provided in the beat bank are programmed to play at 140 BPM when played. If you would like to increase or decrease the tempo, simply click the `+` or `-` button on either side of the player to make adjustments as needed.
 
 ## API keys and resources
 ### Songster
@@ -41,7 +43,7 @@ http://www.songsterr.com/a/wa/song?id={id}
 </br>
 http://www.songsterr.com/a/wa/artist?id={id}
 </br>
-### youTube
+### YouTube
 our modified API request
 <br/>
 https://www.googleapis.com/youtube/v3/search?part=snippet&q=guitar+tutorial+{song name}&type=video&key={API KEY}<br/>
@@ -52,7 +54,7 @@ https://www.googleapis.com/youtube/v3/search?part=snippet&q=swimming&type=video&
 [follow this link to obtain a youTube API key - this will require having a registered Google Developers account](https://developers.google.com/youtube/v3/getting-started)
 <br/>
 ### Cloudinary
-Cloudinary is our third resourse.
+Cloudinary is our third resource.
 </br>
 [More information here](https://blog.logrocket.com/handling-images-with-cloudinary-in-react/)
 <br/>
